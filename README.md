@@ -21,4 +21,4 @@ CompTIA CertMaster Labs for Security+ (Exam SY0-701) enable hands-on practice an
 - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
 ## Labs
-- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/blob/Assisted-Lab-Perform-System-Configuration-Gap-Analysis/README.md">Assisted Lab: Perform System Configuration Gap Analysis</a>
+- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
