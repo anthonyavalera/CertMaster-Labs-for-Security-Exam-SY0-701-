@@ -1,5 +1,4 @@
-# CertMaster Labs for Security+ (Exam SY0-701)
-
+# APPLIED LAB: Using Storage Encryption
 ## Objective
 [Brief Objective - Remove this afterwards]
 
