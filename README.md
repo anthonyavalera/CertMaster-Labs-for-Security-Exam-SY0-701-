@@ -1,4 +1,4 @@
-# PROJECTNAME
+# Assisted Lab: Finding Open Service Ports
 
 ## Objective
 [Brief Objective - Remove this afterwards]
