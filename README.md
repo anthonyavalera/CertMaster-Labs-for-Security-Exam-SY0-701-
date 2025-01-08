@@ -1,4 +1,4 @@
-# CertMaster Labs for Security+ (Exam SY0-701)
+# ADAPTIVE LAB: Using a Playbook
 
 ## Objective
 
