@@ -22,7 +22,7 @@ CompTIA CertMaster Labs for Security+ (Exam SY0-701) enable hands-on practice an
 
 ## Labs
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
-- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
+- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/blob/Assisted-Lab-Configuring-Examples-of-Security-Control-Types">Assisted Lab: Configuring Examples of Security Control Types</a>
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
