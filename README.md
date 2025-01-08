@@ -26,8 +26,8 @@ CompTIA CertMaster Labs for Security+ (Exam SY0-701) enable hands-on practice an
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/blob/Assisted-Lab-Finding-Open-Service-Ports">Assisted Lab: Finding Open Service Ports</a>
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/blob/Assisted-Lab-Using-SET-to-Perform-Social-Engineering">Assisted Lab: Using SET to Perform Social Engineering</a>
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/blob/APPLIED-LAB-Using-Storage-Encryption">APPLIED LAB: Using Storage Encryption</a>
-- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
-- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
+- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/blob/Assisted-Lab-Using-Hashing-and-Salting">Assisted Lab: Using Hashing and Salting</a>
+- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/blob/Assisted-Lab-Managing-Password-Security">Assisted Lab: Managing Password Security</a>
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
 - <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
