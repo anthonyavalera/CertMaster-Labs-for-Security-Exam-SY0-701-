@@ -1,4 +1,4 @@
-# CertMaster Labs for Security+ (Exam SY0-701)
+# Assisted Lab: Using SET to Perform Social Engineering
 
 ## Objective
 [Brief Objective - Remove this afterwards]
