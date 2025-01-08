@@ -1,4 +1,4 @@
-# CertMaster Labs for Security+ (Exam SY0-701)
+# APPLIED LAB: Incident Response Detectiom
 
 ## Objective
 
