@@ -1,9 +1,8 @@
 # CertMaster Labs for Security+ (Exam SY0-701)
 
 ## Objective
-[Brief Objective - Remove this afterwards]
 
-The Detection Lab project aimed to establish a controlled environment for simulating and detecting cyber attacks. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, generating test telemetry to mimic real-world attack scenarios. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
+CompTIA CertMaster Labs for Security+ (Exam SY0-701) enable hands-on practice and skills development using real equipment and software accessed through a remote, browser-based lab environment. Aligned with Official CompTIA courseware and the CompTIA Security+ (Exam SY0-701) exam objectives, CertMaster Labs make it easy for learners to practice and apply their skills in real workplace scenarios in preparation for the certification exam. All lab activities include gradable assessments, offer feedback and hints, and provide a score based on learner inputs, ultimately guiding you to the most correct and efficient path through job tasks.
 
 ### Skills Learned
 [Bullet Points - Remove this afterwards]
