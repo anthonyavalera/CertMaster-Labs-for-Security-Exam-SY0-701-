@@ -1,4 +1,4 @@
-# CertMaster Labs for Security+ (Exam SY0-701)
+# Assisted Lab: Performing DNS Filtering
 
 ## Objective
 
