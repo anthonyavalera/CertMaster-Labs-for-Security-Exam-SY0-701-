@@ -1,4 +1,4 @@
-# CompTIA-Security-Lab
+# CertMaster Labs for Security+ (Exam SY0-701)
 
 ## Objective
 [Brief Objective - Remove this afterwards]
