@@ -1,4 +1,4 @@
-# CertMaster Labs for Security+ (Exam SY0-701)
+# Assisted Lab: Configuring Examples of Security Control Types
 
 ## Objective
 [Brief Objective - Remove this afterwards]
