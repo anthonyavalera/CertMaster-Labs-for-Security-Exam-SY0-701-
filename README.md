@@ -1,4 +1,4 @@
-# CertMaster Labs for Security+ (Exam SY0-701)
+# CHALLENGE LAB: Network Incident Investigation and Remediation
 
 ## Objective
 
