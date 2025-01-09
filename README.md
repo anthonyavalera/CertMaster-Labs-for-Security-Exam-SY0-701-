@@ -55,10 +55,10 @@ Gap analysis is the act of comparing the current configuration of a system with 
 
 7. Enter copy D:\* c:\LABFILES
 
-This command copies PolicyAnalyzer.zip and Windows 10 Version 1809 and Windows Server 2019 Security Baseline.zip from the read-only removable media virtual optical disc (i.e., D:) to C:\LABFILES.
-- If the command is successful, there will be no confirmation.
-- These two files are from the Microsoft Security Compliance Toolkit. The baseline file was selected based on the OS version and build number.
-- The Microsoft Security Compliance Toolkit includes the Policy Analyzer tool as well as numerous security configuration template files. Searching for "Microsoft Security Compliance Toolkit" will help you locate the download area on the Microsoft website where these items are hosted. They have been provided for you the Student-Resources-L01.ISO media.
+   This command copies PolicyAnalyzer.zip and Windows 10 Version 1809 and Windows Server 2019 Security Baseline.zip from the read-only removable media virtual optical disc     (i.e., D:) to C:\LABFILES.
+  - If the command is successful, there will be no confirmation.
+  - These two files are from the Microsoft Security Compliance Toolkit. The baseline file was selected based on the OS version and build number.
+  - The Microsoft Security Compliance Toolkit includes the Policy Analyzer tool as well as numerous security configuration template files. Searching for "Microsoft Security     Compliance Toolkit" will help you locate the download area on the Microsoft website where these items are hosted. They have been provided for you the Student-Resources-     L01.ISO media.
 
 8. Enter cd c:\LABFILES to change into the directory.
 
