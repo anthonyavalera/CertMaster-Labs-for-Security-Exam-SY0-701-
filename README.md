@@ -49,8 +49,7 @@ Step 3. The About Windows window should be displayed. Look at the second line, w
 Step 4. Select OK to close the About Windows window.
 
 Step 5. Select Type here to search from the taskbar, type powershell, right-click Windows PowerShell from the results, then select Run as administrator.
-
-Do no use Windows PowerShell ISE nor Windows PowerShell (X86).
+- Do no use Windows PowerShell ISE nor Windows PowerShell (X86).
 
 Step 6. Select Yes on the User Account Control window.
 
