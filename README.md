@@ -1,4 +1,4 @@
-# APPLIED LAB: Incident Response: Detectiom
+# APPLIED LAB: Incident Response: Detection
 
 ## Objective
 
