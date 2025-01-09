@@ -2,7 +2,13 @@
 
 ## Objective
 
-CompTIA CertMaster Labs for Security+ (Exam SY0-701) enable hands-on practice and skills development using real equipment and software accessed through a remote, browser-based lab environment. Aligned with Official CompTIA courseware and the CompTIA Security+ (Exam SY0-701) exam objectives, CertMaster Labs make it easy for learners to practice and apply their skills in real workplace scenarios in preparation for the certification exam. All lab activities include gradable assessments, offer feedback and hints, and provide a score based on learner inputs, ultimately guiding you to the most correct and efficient path through job tasks.
+This activity is designed to test your understanding of and ability to apply content examples in the following CompTIA Security+ objectives:
+
+1.2 Summarize fundamental security concepts.
+3.2 Given a scenario, apply security principles to secure enterprise infrastructure
+4.1 Given a scenario, apply common security techniques to computing resources.
+4.4 Explain security alerting and monitoring concepts and tools.
+5.1 Summarize elements of effective security governance.
 
 ### Skills Learned
 [Bullet Points - Remove this afterwards]
@@ -20,5 +26,137 @@ CompTIA CertMaster Labs for Security+ (Exam SY0-701) enable hands-on practice an
 - Network analysis tools (such as Wireshark) for capturing and examining network traffic.
 - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
-## Labs
-- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
+## Steps
+
+### Evaluate security policy templates
+
+As a security team member, you may need to use existing security templates from a reputable source, such as sans.org, which can be tailored and scoped to your environment's specific needs and requirements. In this exercise, you will be evaluating security policy templates.
+
+The Security+ Skillable lab environment does not have direct internet access. Therefore, you must perform some tasks using your local browser.
+
+On your local computer, open another tab in your current browser or open a new browser.
+
+Be sure to leave the current local browser tab open, which is focused on the virtual lab environment. This will allow you to return to these instructions and perform additional steps.
+
+In your local browser's address bar, enter https://www.sans.org/information-security-policy/.
+
+You can highlight and cut-n-paste this URL from the instructions into the address bar of your local browser.
+
+You may see the typical pop-up notification regarding the acceptance of cookies. This notification is due to the General Data Protection Regulation (GDPR). Select Accept All Cookies.
+
+This site maintains security policy templates that can be used and customized by anyone. The security policy templates are grouped into various categories.
+
+Locate the Filters: section, then under Categories, mark the Network Security check box.
+
+The list of security policy templates will be limited to those related to network security.
+
+Select Remote Access Policy to expand its section.
+
+Read the description of this security policy concept.
+
+Select PDF to download and view the PDF version of this policy.
+
+Review the major sections of this policy document. Notice the sections or headings used to organize the document.
+
+Which of the following are headings or section titles in the security policy document from the SANS organization? (Select all that apply)
+
+Scope
+Redactions
+Revision History
+Overview
+Purpose
+Policy Compliance
+Policy
+Close the Remote Access Policy PDF and return to the SANS website.
+
+Under the Filters: section, under Categories, clear the Network Security check box.
+
+Under the Filters: section, under Categories, mark the Server Security check box.
+
+The list of security policy templates will be limited to those related to server security.
+
+Select Server Security Policy to expand its section.
+
+Read the description of this security policy concept.
+
+Select PDF to download and view the PDF version of this policy.
+
+Review the major sections of this policy document.
+
+The Server Security Policy references two other policies related to this policy document's concepts. What are those two other policies?
+
+Wireless Communication Policy
+Software Installation Policy
+DMZ Equipment Policy
+Password Protection Policy
+Audit Policy
+Close the Server Security Policy PDF and return to the SANS website.
+
+Explore at least three other policies from the SANS website.
+
+Switch back to the browser tab focused on the Security+ Skillable virtual lab environment.
+
+Check your work
+Confirm that you viewed several security policies from SANS.
+
+### Access security benchmarks and configuration guides
+
+As a security team member, you may need to use existing security templates from a reputable source, such as CIS (Center for Internet Security). In this exercise, you will be evaluating security benchmarks and configuration guides.
+
+The Security+ Skillable lab environment does not have direct internet access. Therefore, you must perform some tasks using your local browser.
+
+On your local computer, open another tab in your current browser or open a new browser.
+
+Be sure to leave the current local browser tab open, which is focused on the virtual lab environment. This will allow you to return to these instructions and perform additional steps.
+
+In your local browser's address bar, enter https://www.cisecurity.org/cis-benchmarks/.
+
+You can highlight and cut-n-paste this URL from the instructions into the address bar of your local browser.
+
+You may see the typical pop-up notification regarding the acceptance of cookies. This notification is due to the General Data Protection Regulation (GDPR). Select Accept.
+
+This site maintains security configuration guides and benchmarks that can be used and customized by anyone.
+
+Look at the CIS Benchmarks listed on this website, scroll down to locate the Microsoft Windows Server section,
+
+The CIS (Center for Internet Security) Benchmarks (a.k.a. configuration guides) are grouped into categories: Cloud Providers, Desktop Software, DevSecOps Tools, Mobile Devices, Multi-Function Print Devices, Network Devices, Operating Systems, and Server Software.
+
+Select Microsoft Windows Server to expand the related content.
+
+Read over the list of available versions of this benchmark.
+
+At the bottom of the section for Microsoft Windows Server, there is the statement "To further explore this Benchmark, click here.". Select that click here link.
+
+A details page for the Microsoft Windows Server benchmarks is displayed.
+
+This CIS Benchmark is the product of a community consensus process and consists of secure configuration guidelines developed for Microsoft Windows Server.
+
+The Microsoft Windows Server benchmarks are available for a wide range of versions of this OS. Which of the following are included on the list at CIS?
+
+Microsoft Windows Server 2003
+Microsoft Windows Server 2008
+Microsoft Windows Server 2016
+Microsoft Windows Server 2019
+Microsoft Windows Server 2022
+Locate but do not select the download link.
+
+The benchmark download link opens a new page where the free PDF of the benchmark document can be obtained, but only after providing contact information. Do not fill out this form at this time – you are not required nor encouraged to distribute your private information as part of this exercise.
+
+If you wish to download CIS benchmarks, you will need to provide some contact details to CIS, including name, organization, sector, role, email, and country.
+
+Use the back button on your browser to return to the CIS Benchmarks page.
+
+Look over the list of 100+ benchmarks available from CIS.
+
+CIS Benchmarks are available for which of the following products?
+
+NGINX
+Docker
+pfSense Firewall
+Amazon Web Services
+Zoom
+Apple iOS
+When you finished exploring the CIS benchmarks or the rest of their site and offerings, switch back to the browser tab focused on the Security+ Skillable virtual lab environment.
+
+Check your work
+Confirm that you explored the categories and topics of CIS benchmarks (a.k.a. configuration guides).
