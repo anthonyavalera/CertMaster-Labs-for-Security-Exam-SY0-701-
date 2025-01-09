@@ -37,31 +37,31 @@ Example below.
 
 Gap analysis is the act of comparing the current configuration of a system with a template, configuration file, baseline, security framework, or settings documentation. This is an essential operation to discover the differences between the intended or expected configuration of a system and its actual operating configuration. In this exercise, you will perform a gap analysis.
 
-Step 1. Connect to the PC10 virtual machine, send Ctrl+Alt+Delete, select Other User, and sign in as .\admin with the password Pa$$w0rd.
+1. Connect to the PC10 virtual machine, send Ctrl+Alt+Delete, select Other User, and sign in as .\admin with the password Pa$$w0rd.
 - Select the Type Text icon to enter the associated text into the virtual machine.
 - Since Jaime may be the default account, you must select Other user, then enter .\admin followed by Pa$$w0rd as the password.
 
-Step 2. Determine the build number for the Windows Server 2019 running in thePC10 virtual machine using winver. Select Type here to search from the taskbar, type winver, then select winver from the results.
+2. Determine the build number for the Windows Server 2019 running in thePC10 virtual machine using winver. Select Type here to search from the taskbar, type winver, then select winver from the results.
 
-Step 3. The About Windows window should be displayed. Look at the second line, which reads “Version 1809 (OS Build 17763.4377)”.
+3. The About Windows window should be displayed. Look at the second line, which reads “Version 1809 (OS Build 17763.4377)”.
 - The Windows Server 2019 version number 1809 and the OS Build number 17763 are fixed for this challenge. If you perform these operations against other systems, you will need to match the version and build numbers to the baseline template files.
 
-Step 4. Select OK to close the About Windows window.
+4. Select OK to close the About Windows window.
 
-Step 5. Select Type here to search from the taskbar, type powershell, right-click Windows PowerShell from the results, then select Run as administrator.
+5. Select Type here to search from the taskbar, type powershell, right-click Windows PowerShell from the results, then select Run as administrator.
 - Do no use Windows PowerShell ISE nor Windows PowerShell (X86).
 
-Step 6. Select Yes on the User Account Control window.
+6. Select Yes on the User Account Control window.
 
-Step 7. Enter copy D:\* c:\LABFILES
+7. Enter copy D:\* c:\LABFILES
 This command copies PolicyAnalyzer.zip and Windows 10 Version 1809 and Windows Server 2019 Security Baseline.zip from the read-only removable media virtual optical disc (i.e., D:) to C:\LABFILES.
 - If the command is successful, there will be no confirmation.
 - These two files are from the Microsoft Security Compliance Toolkit. The baseline file was selected based on the OS version and build number.
 - The Microsoft Security Compliance Toolkit includes the Policy Analyzer tool as well as numerous security configuration template files. Searching for "Microsoft Security Compliance Toolkit" will help you locate the download area on the Microsoft website where these items are hosted. They have been provided for you the Student-Resources-L01.ISO media.
 
-Step 8. Enter cd c:\LABFILES to change into the directory.
+8. Enter cd c:\LABFILES to change into the directory.
 
-Step 9. Enter ls to view the contents of the directory.
+9. Enter ls to view the contents of the directory.
 - You should see PolicyAnalyzer.zip and Windows 10 Version 1809 and Windows Server 2019 Security Baseline.zip in the list of files.
 - "ls" is a Linux command (one of many) that are supported by Windows PowerShell. The "dir" will also display the directory contents.
 
