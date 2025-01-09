@@ -60,6 +60,7 @@ Check your work
 Confirm that you implemented a preventive control.
 Confirm that you tested a preventive control.
 
+### Configure and test detective controls
 A detective control records a log each time an event occurs, regardless of whether that activity is benign or malicious. In this exercise, you will first perform an activity that will not be logged. Next, you will configure logging to record that activity, and then you will perform the activity again. Finally, you will review the log to confirm the record of the activity was created.
 
 Connect to the PC10 virtual machine, send Ctrl+Alt+Delete, and sign in as Jaime using Pa$$w0rd as the password.
