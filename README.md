@@ -1,9 +1,14 @@
 # Assisted Lab: Perform System Configuration Gap Analysis
 
 ## Objective
-[Brief Objective - Remove this afterwards]
 
-The Detection Lab project aimed to establish a controlled environment for simulating and detecting cyber attacks. The primary focus was to ingest and analyze logs within a Security Information and Event Management (SIEM) system, generating test telemetry to mimic real-world attack scenarios. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
+This activity is designed to test your understanding of and ability to apply content examples in the following CompTIA Security+ objectives:
+
+1.2 Summarize fundamental security concepts.
+3.2 Given a scenario, apply security principles to secure enterprise infrastructure
+4.1 Given a scenario, apply common security techniques to computing resources.
+4.4 Explain security alerting and monitoring concepts and tools.
+5.1 Summarize elements of effective security governance.
 
 ### Skills Learned
 [Bullet Points - Remove this afterwards]
