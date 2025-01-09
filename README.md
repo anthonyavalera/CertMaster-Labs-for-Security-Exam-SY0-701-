@@ -34,6 +34,7 @@ Every screenshot should have some text explaining what the screenshot is about.
 Example below.
 
 *Ref 1: Network Diagram*
+
 Gap analysis is the act of comparing the current configuration of a system with a template, configuration file, baseline, security framework, or settings documentation. This is an essential operation to discover the differences between the intended or expected configuration of a system and its actual operating configuration. In this exercise, you will perform a gap analysis.
 
 Step 1. Connect to the PC10 virtual machine, send Ctrl+Alt+Delete, select Other User, and sign in as .\admin with the password Pa$$w0rd.
