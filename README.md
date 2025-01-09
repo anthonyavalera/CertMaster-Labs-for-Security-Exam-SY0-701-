@@ -68,66 +68,66 @@ Gap analysis is the act of comparing the current configuration of a system with 
 - You should see PolicyAnalyzer.zip and Windows 10 Version 1809 and Windows Server 2019 Security Baseline.zip in the list of files.
 - "ls" is a Linux command (one of many) that are supported by Windows PowerShell. The "dir" will also display the directory contents.
 
-Enter the following commands to extract the contents of the zip files into their own sub-directories:
+10. Enter the following commands to extract the contents of the zip files into their own sub-directories:
 
-Expand-Archive -Path PolicyAnalyzer.zip
+- Expand-Archive -Path PolicyAnalyzer.zip
 Expand-Archive -Path "Windows 10 Version 1809 and Windows Server 2019 Security Baseline.zip"
-Enter the following command to open the Policy Analyzer application:
+11. Enter the following command to open the Policy Analyzer application:
 
 C:\LABFILES\PolicyAnalyzer\PolicyAnalyzer_40\PolicyAnalyzer.exe
-The Policy Analyzer window should now be displayed. If needed, minimize the PowerShell window.
+12. The Policy Analyzer window should now be displayed. If needed, minimize the PowerShell window.
 
 The Policy Analyzer window may appear behind the PowerShell window.
 
-Maximize the Policy Analyzer window.
+13. Maximize the Policy Analyzer window.
 
 The operation buttons on the right side of the interface may not display fully when the window is not maximized.
 
-At the bottom of the Policy Analyzer window, select the Policy Rule sets in field.
+14. At the bottom of the Policy Analyzer window, select the Policy Rule sets in field.
 
 If you do not see Policy Rules sets in and Policy Definitions in, adjust your screen to a higher resolution and relaunch the Policy Analyzer.
 
-On the Pick the folder containing the Policy Analyzer Policy Rules files window, in left pane select Local Disk (C:), in the right pane double-click LABFILES, double-click Windows 10 Version 1809 and Windows Server 2019 Security Baseline, double-click Documentation, then select Select Folder.
+15. On the Pick the folder containing the Policy Analyzer Policy Rules files window, in left pane select Local Disk (C:), in the right pane double-click LABFILES, double-click Windows 10 Version 1809 and Windows Server 2019 Security Baseline, double-click Documentation, then select Select Folder.
 
 The Policy Analyzer window should now show several policy rule sets.
 
-Perform a View/Compare of MSFT-Win10-v1809-RS5-WS2019-FINAL using Policy Analyzer by marking the MSFT-Win10-v1809-RS5-WS2019-FINAL checkbox, then selecting View / Compare.
+16. Perform a View/Compare of MSFT-Win10-v1809-RS5-WS2019-FINAL using Policy Analyzer by marking the MSFT-Win10-v1809-RS5-WS2019-FINAL checkbox, then selecting View / Compare.
 
 The Policy Viewer window will be displayed, showing the various policy settings contained in the MSFT-Win10-v1809-RS5-WS2019-FINAL policy rule set.
 
 This feature, View/Compare, shows the settings currently in the baseline security template file.
 
-Scroll down the list and look at a few policy setting lines.
+17. Scroll down the list and look at a few policy setting lines.
 
-Scroll to the bottom of the list and locate the LockoutBadCount, which is 9th from the bottom.
+18. Scroll to the bottom of the list and locate the LockoutBadCount, which is 9th from the bottom.
 
 What is the baseline value from the security template for the policy setting item of LockoutBadCount?
 
-Also near the bottom, locate MinimumPasswordLength, which is 4th from the bottom.
+19. Also near the bottom, locate MinimumPasswordLength, which is 4th from the bottom.
 
 What is the baseline value from the security template for the policy setting item of MinimumPasswordLength?
 
-Close the Policy Viewer window.
+20. Close the Policy Viewer window.
 
-Perform a Compare to Effective State of MSFT-Win10-v1809-RS5-WS2019-FINAL using Policy Analyzer by marking the MSFT-Win10-v1809-RS5-WS2019-FINAL checkbox, then selecting Compare to Effective State.
+21. Perform a Compare to Effective State of MSFT-Win10-v1809-RS5-WS2019-FINAL using Policy Analyzer by marking the MSFT-Win10-v1809-RS5-WS2019-FINAL checkbox, then selecting Compare to Effective State.
 
 This feature, Compare to Effective State, performs a gap analysis between the baseline security template file and the current in-use values of the local operating system.
 
-If a User Account Control window appears, select Yes.
+22. If a User Account Control window appears, select Yes.
 
-The Policy Viewer window will be displayed, showing a comparison between the various policy settings contained in the MSFT-Win10-v1809-RS5-WS2019-FINAL policy rule set and the current operating system (labeled as “Effective state”).
+23. The Policy Viewer window will be displayed, showing a comparison between the various policy settings contained in the MSFT-Win10-v1809-RS5-WS2019-FINAL policy rule set and the current operating system (labeled as “Effective state”).
 
-Notice that many items are highlighted in yellow. These are where there are differences between the baseline file and the current effective state of the live operating system environment of PC10.
+24. Notice that many items are highlighted in yellow. These are where there are differences between the baseline file and the current effective state of the live operating system environment of PC10.
 
-Scroll down to the bottom of the list.
+25. Scroll down to the bottom of the list.
 
-Notice the Effective state value of LockoutBadCount is 0, and MinimumPasswordLength is 7.
+26. Notice the Effective state value of LockoutBadCount is 0, and MinimumPasswordLength is 7.
 
 Is the PC10 system in compliance with the security template based on the gap analysis results?
 
 No
 Yes
-Close the Policy Viewer window.
+27. Close the Policy Viewer window.
 
 Since you are using a security template from a third party, it is essential to understand that while the template's settings may be based on general security best practices and recommendations, they are not tuned specifically to your organization's risk profile or business goals. You will need to tailor and scope security configuration templates to your organization's specific needs and requirements.
 
