@@ -53,10 +53,15 @@ You are intially working from an external subnet (an internet simulation) in rel
 - This nmap command will perform several operations against the target:
 
 ◦ The "-F" parameter sets the scan to only test the top 100 popular ports.
+
 ◦ The "-sS" parameter sets the scan type to SYN scan. This is also the default scan type. The SYN scan is the most reliable scan option as it simulates the initial communication attempt from a valid client, while not completing the establishment of a full session. Therefore, the SYN scan has the best chance of determining the open state of TCP ports.
+
 ◦ The "-sV" parameter performs a version scan, which attempts to elicit the identity of services on open ports.
+
 ◦ The "-O" parameter attempts to identify the operating system.
+
 ◦ The "-Pn" parameter disables host discovery and assumes all IPs are actively in use.
+
 ◦ The "-oN" parameter saves the output of nmap to the specified filename (in addition to the screen display of the same).
 
 4. Enter the following command to display just the open port results:
