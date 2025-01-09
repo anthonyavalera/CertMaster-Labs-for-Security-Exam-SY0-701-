@@ -2,7 +2,24 @@
 
 ## Objective
 
-CompTIA CertMaster Labs for Security+ (Exam SY0-701) enable hands-on practice and skills development using real equipment and software accessed through a remote, browser-based lab environment. Aligned with Official CompTIA courseware and the CompTIA Security+ (Exam SY0-701) exam objectives, CertMaster Labs make it easy for learners to practice and apply their skills in real workplace scenarios in preparation for the certification exam. All lab activities include gradable assessments, offer feedback and hints, and provide a score based on learner inputs, ultimately guiding you to the most correct and efficient path through job tasks.
+Investigate the incident.
+
+4.8 Explain appropriate incident response activities.
+4.9 Given a scenario, use data sources to support an investigation.
+Analyze logs to gather more information about the incident. Look for any anomalies or suspicious activity that correlates with the information from the packet capture output.
+
+2.4 Given a scenario, analyze indicators of malicious activity.
+Identify the nature of the security incident. Determine the source of the breach, the affected systems or files, and the potential impact on the network.
+
+4.8 Explain appropriate incident response activities.
+Remediate the security incident, including removing any anomalous files from the system, modifying permissions to prevent unauthorized access, and implementing additional security measures as needed.
+
+4.1 Given a scenario, apply common security techniques to computing resources.
+4.5 Given a scenario, modify enterprise capabilities to enhance security.
+Monitor the network for any further suspicious activity.
+
+4.4 Explain security alerting and monitoring concepts and tools.
+3.2 Given a scenario, apply security principles to secure enterprise infrastructure.
 
 ### Skills Learned
 [Bullet Points - Remove this afterwards]
@@ -20,5 +37,20 @@ CompTIA CertMaster Labs for Security+ (Exam SY0-701) enable hands-on practice an
 - Network analysis tools (such as Wireshark) for capturing and examining network traffic.
 - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
-## Labs
-- <a href="https://github.com/anthonyavalera/CertMaster-Labs-for-Security-Exam-SY0-701-/tree/Assisted-Lab-Perform-System-Configuration-Gap-Analysis">Assisted Lab: Perform System Configuration Gap Analysis</a>
+## Steps
+
+### 
+
+
+
+### 
+
+
+
+### 
+
+
+
+### 
+
+
