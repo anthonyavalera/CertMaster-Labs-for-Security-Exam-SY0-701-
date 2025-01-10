@@ -40,7 +40,7 @@ Verify whether the share has been configured with appropriate permissions by try
 
 4. You should see the contents of the TOOLS share.
 
-Sam is not an administrator and should not have access. You need to implement a prevention control so that Sam and other non-administrators cannot access this share.
+    - Sam is not an administrator and should not have access. You need to implement a prevention control so that Sam and other non-administrators cannot access this share.
 
 5. Close File Explorer.
 
@@ -52,13 +52,8 @@ Sam is not an administrator and should not have access. You need to implement a 
 
 9. Select the Permissions tab, and then click Customize permissions.
 
-Which account or group object on the access control list should NOT have been assigned permissions on the share?
-
-Domain Admins
-CREATOR OWNER
-Users
-LocalAdmin
 Check your work
+
 Confirm that you implemented a preventive control.
 Confirm that you tested a preventive control.
 
