@@ -105,17 +105,13 @@ Gap analysis is the act of comparing the current configuration of a system with 
 
 18. Scroll to the bottom of the list and locate the LockoutBadCount, which is 9th from the bottom.
 
-   What is the baseline value from the security template for the policy setting item of LockoutBadCount?
-
 19. Also near the bottom, locate MinimumPasswordLength, which is 4th from the bottom.
-
-   What is the baseline value from the security template for the policy setting item of MinimumPasswordLength?
 
 20. Close the Policy Viewer window.
 
 21. Perform a Compare to Effective State of MSFT-Win10-v1809-RS5-WS2019-FINAL using Policy Analyzer by marking the MSFT-Win10-v1809-RS5-WS2019-FINAL checkbox, then selecting Compare to Effective State.
 
-   This feature, Compare to Effective State, performs a gap analysis between the baseline security template file and the current in-use values of the local operating system.
+   - This feature, Compare to Effective State, performs a gap analysis between the baseline security template file and the current in-use values of the local operating system.
 
 22. If a User Account Control window appears, select Yes.
 
