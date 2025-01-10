@@ -27,13 +27,6 @@ This activity is designed to test your understanding of and ability to apply con
 - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
 ## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
-
-Every screenshot should have some text explaining what the screenshot is about.
-
-Example below.
-
-*Ref 1: Network Diagram*
 
 ### Perform gap analysis
 
