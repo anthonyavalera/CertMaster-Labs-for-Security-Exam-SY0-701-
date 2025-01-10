@@ -93,7 +93,7 @@ Gap analysis is the act of comparing the current configuration of a system with 
 
 15. On the Pick the folder containing the Policy Analyzer Policy Rules files window, in left pane select Local Disk (C:), in the right pane double-click LABFILES, double-click Windows 10 Version 1809 and Windows Server 2019 Security Baseline, double-click Documentation, then select Select Folder.
 
-      - The Policy Analyzer window should now show several policy rule sets.
+    The Policy Analyzer window should now show several policy rule sets.
 
 16. Perform a View/Compare of MSFT-Win10-v1809-RS5-WS2019-FINAL using Policy Analyzer by marking the MSFT-Win10-v1809-RS5-WS2019-FINAL checkbox, then selecting View / Compare.
 
