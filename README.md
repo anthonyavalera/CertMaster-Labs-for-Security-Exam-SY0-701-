@@ -69,9 +69,9 @@ A detective control records a log each time an event occurs, regardless of wheth
 
 3. Right-click the folder empty then select Delete.
 
-- The empty folder should no longer be present.
+    - The empty folder should no longer be present.
 
-- The default configuration of Windows Server 2019 is NOT to prompt to confirm deletions. This setting can be changed through the Properties of the Recycle Bin.
+    - The default configuration of Windows Server 2019 is NOT to prompt to confirm deletions. This setting can be changed through the Properties of the Recycle Bin.
 
 4. Right-click Start and select Event Viewer.
 
@@ -81,7 +81,7 @@ A detective control records a log each time an event occurs, regardless of wheth
 
 7. Select Security from in the Windows Logs expanded contents.
 
-- Wait a few moments for the log to be loaded and displayed.
+    - Wait a few moments for the log to be loaded and displayed.
 
 8. Select Find… in the right pane.
 
@@ -89,12 +89,6 @@ A detective control records a log each time an event occurs, regardless of wheth
 
 10. After a few moments of searching, a window will appear stating the search term was not found. Select OK.
 
-The results of the find operation indicate what?
-
-User activity is being tracked
-Folder deletion is not being audited
-Jamie is an administrator
-Users are unable to access empty folders
 11. Select Cancel to close the Find window.
 
 12. Select Type here to search from the taskbar, type local, then select Local Security Policy from the results.
@@ -107,11 +101,11 @@ Users are unable to access empty folders
 
 16. Select to mark both the Success and Failure checkboxes, then select OK.
 
-- While the main switch for auditing object access activities is now on, auditing will not occur on most file objects until an on-object auditing setting is made.
+    - While the main switch for auditing object access activities is now on, auditing will not occur on most file objects until an on-object auditing setting is made.
 
 17. Close the Local Security Policy window.
 
-- The setting change should apply immediately. If the next steps do not result in a record of a folder deletion in the Security log accessed through the Event Viewer, restart PC10 and repeat from here, but you will then need to delete the MARKETING folder.
+    - The setting change should apply immediately. If the next steps do not result in a record of a folder deletion in the Security log accessed through the Event Viewer, restart PC10 and repeat from here, but you will then need to delete the MARKETING folder.
 
 18. Return to File Explorer.
 
@@ -131,7 +125,7 @@ Users are unable to access empty folders
 
 26. Type everyone in the Enter the object name to select field, then select Check Names.
 
-- The field should now display Everyone..
+    - The field should now display Everyone..
 
 27. Select OK.
 
@@ -151,7 +145,7 @@ Users are unable to access empty folders
 
 35. Right-click the pcaps folder, then select Delete.
 
-- The pcaps folder should no longer be present.
+    - The pcaps folder should no longer be present.
 
 Select the Score button to validate this task:
 
@@ -163,40 +157,34 @@ Select the Score button to validate this task:
 
 39. Select the first entry at the top of the middle pane.
 
-- This sets the search-from point for the Find function, which only searches from the currently selected entry to earlier entries (i.e., down).
+    - This sets the search-from point for the Find function, which only searches from the currently selected entry to earlier entries (i.e., down).
 
 40. Select Find… in the right pane.
 
 41. Type 4660 in the Find what: filed, then select Find Next.
 
-- 4660 is the Event ID for the event type of object deletion.
+    - 4660 is the Event ID for the event type of object deletion.
 
 42. Select Cancel to close the Find window.
 
 43. An audit record of Event ID: 4660 should be selected. In the bottom pane, you should see the statement "An object was deleted".
 
-- Oddly, while Event ID 4660 is the record of an object being deleted, it does not contain the actual object's name. For that, you need to find the associated Event ID 4663.
+    - Oddly, while Event ID 4660 is the record of an object being deleted, it does not contain the actual object's name. For that, you need to find the associated Event ID 4663.
 
 44. The Event ID 4663 for the folder deletion should be about five records above the currently selected one. Select the lowest record of Event ID 4663 above the currently selected Event ID 4660 record.
 
-- The correct Event ID 4663 record should be about five records above the selected Event ID 4660 record.
+    - The correct Event ID 4663 record should be about five records above the selected Event ID 4660 record.
 
 45. Once you have selected the Event ID 4663 record, you can view the details in the bottom pane. The General tab has a small scrollable sub-window with details. You should see a line of "Object Name: C\LABFILES\pcaps". This Event ID 4663 record confirms that the object deleted was the C\LABFILES\pcaps folder.
 
-- You could also select the Details pane to see most of the same information.
-
-What is the purpose of a detective control?
-
-Deny access to an object
-Notify subjects about system policies
-Inform users of the proper steps to perform an activity
-Create a record of events and activities
+    - You could also select the Details pane to see most of the same information.
 
 46. Sign out of PC10 by selecting the Start menu, then selecting Jaime (which will be a circle at the top of the menu), then select Sign out. If prompted that there are open programs, select Sign out anyway.
 
 You have successfully implemented a detective control to record object access activity.
 
 Check your work
+
 Confirm that you implemented a detective control.
 Confirm that you tested a detective control.
 
