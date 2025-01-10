@@ -1,7 +1,9 @@
 # Assisted Lab: Perform System Configuration Gap Analysis
 
 ## Objective
+
 This activity is designed to test your understanding of and ability to apply content examples in the following CompTIA Security+ objectives:
+
 - 1.2 Summarize fundamental security concepts.
 - 3.2 Given a scenario, apply security principles to secure enterprise infrastructure
 - 4.1 Given a scenario, apply common security techniques to computing resources.
@@ -32,6 +34,8 @@ Every screenshot should have some text explaining what the screenshot is about.
 Example below.
 
 *Ref 1: Network Diagram*
+
+### Perform gap analysis
 
 Gap analysis is the act of comparing the current configuration of a system with a template, configuration file, baseline, security framework, or settings documentation. This is an essential operation to discover the differences between the intended or expected configuration of a system and its actual operating configuration. In this exercise, you will perform a gap analysis.
 
