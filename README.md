@@ -97,9 +97,9 @@ Gap analysis is the act of comparing the current configuration of a system with 
 
 16. Perform a View/Compare of MSFT-Win10-v1809-RS5-WS2019-FINAL using Policy Analyzer by marking the MSFT-Win10-v1809-RS5-WS2019-FINAL checkbox, then selecting View / Compare.
 
-The Policy Viewer window will be displayed, showing the various policy settings contained in the MSFT-Win10-v1809-RS5-WS2019-FINAL policy rule set.
+   The Policy Viewer window will be displayed, showing the various policy settings contained in the MSFT-Win10-v1809-RS5-WS2019-FINAL policy rule set.
 
-   This feature, View/Compare, shows the settings currently in the baseline security template file.
+   - This feature, View/Compare, shows the settings currently in the baseline security template file.
 
 17. Scroll down the list and look at a few policy setting lines.
 
