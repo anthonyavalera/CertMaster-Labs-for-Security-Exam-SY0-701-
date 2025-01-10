@@ -63,7 +63,7 @@ A detective control records a log each time an event occurs, regardless of wheth
 
 1. Connect to the PC10 virtual machine, send Ctrl+Alt+Delete, and sign in as Jaime using Pa$$w0rd as the password.
 
-- Jaime is a member of the LocalAdmin group. So, this user account is an administrator on the PC10 system.
+    - Jaime is a member of the LocalAdmin group. So, this user account is an administrator on the PC10 system.
 
 2. Open File Explorer, and from the Quick access pane, select LABFILES.
 
