@@ -4,15 +4,11 @@
 
 This activity is designed to test your understanding of and ability to apply content examples in the following CompTIA Security+ objectives:
 
-   • 1.2 Summarize fundamental security concepts.
-
-   • 3.2 Given a scenario, apply security principles to secure enterprise infrastructure
-
-   • 4.1 Given a scenario, apply common security techniques to computing resources.
-
-   • 4.4 Explain security alerting and monitoring concepts and tools.
-
-   • 5.1 Summarize elements of effective security governance.
+- 1.2 Summarize fundamental security concepts.
+- 3.2 Given a scenario, apply security principles to secure enterprise infrastructure
+- 4.1 Given a scenario, apply common security techniques to computing resources.
+- 4.4 Explain security alerting and monitoring concepts and tools.
+- 5.1 Summarize elements of effective security governance.
    
 ### Skills Learned
 [Bullet Points - Remove this afterwards]
