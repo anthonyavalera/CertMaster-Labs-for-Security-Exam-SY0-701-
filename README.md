@@ -72,8 +72,8 @@ Gap analysis is the act of comparing the current configuration of a system with 
 
 10. Enter the following commands to extract the contents of the zip files into their own sub-directories:
 
-   - Expand-Archive -Path PolicyAnalyzer.zip
-   - Expand-Archive -Path "Windows 10 Version 1809 and Windows Server 2019 Security Baseline.zip"
+      - Expand-Archive -Path PolicyAnalyzer.zip
+      - Expand-Archive -Path "Windows 10 Version 1809 and Windows Server 2019 Security Baseline.zip"
 
 11. Enter the following command to open the Policy Analyzer application:
 
