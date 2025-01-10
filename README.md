@@ -111,7 +111,7 @@ Gap analysis is the act of comparing the current configuration of a system with 
 
 21. Perform a Compare to Effective State of MSFT-Win10-v1809-RS5-WS2019-FINAL using Policy Analyzer by marking the MSFT-Win10-v1809-RS5-WS2019-FINAL checkbox, then selecting Compare to Effective State.
 
-   - This feature, Compare to Effective State, performs a gap analysis between the baseline security template file and the current in-use values of the local operating system.
+      - This feature, Compare to Effective State, performs a gap analysis between the baseline security template file and the current in-use values of the local operating system.
 
 22. If a User Account Control window appears, select Yes.
 
@@ -122,8 +122,6 @@ Gap analysis is the act of comparing the current configuration of a system with 
 25. Scroll down to the bottom of the list.
 
 26. Notice the Effective state value of LockoutBadCount is 0, and MinimumPasswordLength is 7.
-
-   Is the PC10 system in compliance with the security template based on the gap analysis results?
 
 27. Close the Policy Viewer window.
 
