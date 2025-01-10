@@ -147,8 +147,6 @@ A detective control records a log each time an event occurs, regardless of wheth
 
     - The pcaps folder should no longer be present.
 
-Select the Score button to validate this task:
-
 36. Minimize File Explorer.
 
 37. Return to the Event Viewer.
@@ -194,36 +192,27 @@ A directive control provides instruction to direct a user towards more compliant
 
 1. Connect to the PC10 virtual machine, send Ctrl+Alt+Delete, and sign in as Jaime using Pa$$w0rd as the password.
 
-- Jaime is a member of the LocalAdmin group. So, this user account is an administrator on the PC10 system.
+    - Jaime is a member of the LocalAdmin group. So, this user account is an administrator on the PC10 system.
 
 2. Right-click Start, and select Windows PowerShell (Admin). At the UAC prompt, select Yes.
 
 3. Enter the following code into the Administrator: Windows PowerShell console:
 
-- Be sure to press Enter on your keyboard after each entry fully appears in the PowerShell console. There will not be any confirmation.
+    - Be sure to press Enter on your keyboard after each entry fully appears in the PowerShell console. There will not be any confirmation.
 
-- $BannerText = "This computer system is the property of Structureality Inc. It is for authorized use only. By using this system, all users acknowledge notice of and agree to comply with the Acceptable Use Policy (AUP). Unauthorized or improper use of this system may result in administrative disciplinary action, civil charges/criminal penalties, and/or other sanctions set forth in the AUP. By continuing to use this system, you indicate your awareness of and consent to these terms and conditions. If you are physically located in the European Union, you may have additional rights per the GDPR. Visit the website gdpr-info.eu for more information."
+    - $BannerText = "This computer system is the property of Structureality Inc. It is for authorized use only. By using this system, all users acknowledge notice of and agree to comply with the Acceptable Use Policy (AUP). Unauthorized or improper use of this system may result in administrative disciplinary action, civil charges/criminal penalties, and/or other sanctions set forth in the AUP. By continuing to use this system, you indicate your awareness of and consent to these terms and conditions. If you are physically located in the European Union, you may have additional rights per the GDPR. Visit the website gdpr-info.eu for more information."
 
-- New-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System" -Name "legalnoticecaption" -Value "Authorized Use Only" -PropertyType "String" -Force | Out-Null
+    - New-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System" -Name "legalnoticecaption" -Value "Authorized Use Only" -PropertyType "String" -Force | Out-Null
 
-- New-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System" -Name "legalnoticetext" -Value $BannerText -PropertyType "String" -Force | Out-Null
+    - New-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System" -Name "legalnoticetext" -Value $BannerText -PropertyType "String" -Force | Out-Null
 
-- The text of the warning banner in this exercise amalgamates several banners used by various commercial and educational facilities. Be sure to consult with your own legal counsel before setting a warning banner to ensure it complies with laws and regulations.
-
-Select the Score button to validate this task:
+    - The text of the warning banner in this exercise amalgamates several banners used by various commercial and educational facilities. Be sure to consult with your own legal counsel before setting a warning banner to ensure it complies with laws and regulations.
 
 4. Sign out of PC10 by selecting the Start menu, then selecting Jaime (which will be a circle at the top of the menu), then select Sign out. If prompted that there are open programs, select Sign out anyway.
 
 5. Connect to the PC10 virtual machine, send Ctrl+Alt+Delete.
 
 6. You should be presented with the login warning banner that was just defined.
-
-What is the goal of directive controls?
-
-Tracking
-Prohibition
-Defense
-Compliance
 
 7. Read the warning banner, then select OK.
 
@@ -232,6 +221,7 @@ Compliance
 You have successfully implemented a directive control to inform personnel of the limitations and restrictions of a controlled system.
 
 Check your work
+
 Confirm that you implemented a directive control.
 Confirm that you tested a directive control.
 
@@ -247,9 +237,9 @@ In this exercise, you will first use a fault injection tool to trigger the exist
 
 3. Scroll to locate, then double-click notmyfault64 to execute it.
 
-- There is a CLI (command line interface) version of NotMyFault, which has a c in the file name: notmyfaultc64. If a Command Prompt window flashes open and disappears, you selected the CLI version, not the GUI version of NotMyFault64.
+    - There is a CLI (command line interface) version of NotMyFault, which has a c in the file name: notmyfaultc64. If a Command Prompt window flashes open and disappears, you selected the CLI version, not the GUI version of NotMyFault64.
 
-- Windows Sysinternals is a website that offers technical resources and utilities to manage, diagnose, troubleshoot, and monitor a Microsoft Windows environment. You can experiment with the Sysinternals tools in this lab environment or go directly to sysinternals.com to learn more and download nearly 75 tools onto your system.
+    - Windows Sysinternals is a website that offers technical resources and utilities to manage, diagnose, troubleshoot, and monitor a Microsoft Windows environment. You can experiment with the Sysinternals tools in this lab environment or go directly to sysinternals.com to learn more and download nearly 75 tools onto your system.
 
 4. Select Yes on the User Account Control window.
 
@@ -257,18 +247,11 @@ In this exercise, you will first use a fault injection tool to trigger the exist
 
 6. The PC10 system should immediately experience a stop error (often called the BSOD (Blue Screen of Death)). The system will perform a partial memory dump (for potential analysis - which will not be done in this lab) and then reboot.
 
-- You have verified that the Windows corrective control to protect the execution environment from misbehaving applications is active. While you might not prefer in-memory data to be lost, the stability of the Windows execution environment is protected by immediately ceasing all execution. You can be assured that the offending application will not be running once the system reboots. This native Windows protective feature is why you should save early and often when creating new content or media.
-
-What are the dual purposes of corrective controls? (Select two)
-
-Record evidence of user and event activities
-Return the system to a normal and generally secure condition
-Address an unwanted or less secure state or event
-Provide guidance on proper user behavior
+    - You have verified that the Windows corrective control to protect the execution environment from misbehaving applications is active. While you might not prefer in-memory data to be lost, the stability of the Windows execution environment is protected by immediately ceasing all execution. You can be assured that the offending application will not be running once the system reboots. This native Windows protective feature is why you should save early and often when creating new content or media.
 
 7. Connect to the PC10 virtual machine and send Ctrl+Alt+Delete, select OK, then complete the sign-in process as Jaime using Pa$$w0rd as the password.
 
-- Besides the preventive, detective, directive, and corrective control types covered in this lab's exercises. There are other types of controls, such as deterrent and compensation. A deterrent control persuades perpetrators to go elsewhere - such as a warning sign or an acceptable use policy (AUP). A compensation control is used to compensate for a failed control - such as a backup to compensate for a preventive control failing to stop the deletion of a file.
+    - Besides the preventive, detective, directive, and corrective control types covered in this lab's exercises. There are other types of controls, such as deterrent and compensation. A deterrent control persuades perpetrators to go elsewhere - such as a warning sign or an acceptable use policy (AUP). A compensation control is used to compensate for a failed control - such as a backup to compensate for a preventive control failing to stop the deletion of a file.
 
 Next, you will create your own corrective control to simulate the correction functions of the SigVerif utility.
 
@@ -278,51 +261,47 @@ Next, you will create your own corrective control to simulate the correction fun
 
 9. Enter "This is important" | Set-Content notes.txt.
 
-- This command creates a text file containing the phrase "This is important".
-
-Select the Score button to validate this task:
+    - This command creates a text file containing the phrase "This is important".
 
 10. Enter type notes.txt.
 
-- This command displays the contents of the notes.txt file.
+    - This command displays the contents of the notes.txt file.
 
 11. Enter Get-FileHash ./notes.txt -Algorithm SHA256 | Select-Object -ExpandProperty Hash | Set-Content ./hash.txt.
 
-- This command calculates a hash of the file and stores it in hash.txt for future use.
+    - This command calculates a hash of the file and stores it in hash.txt for future use.
 
-- The dot and slash (i.e., ./) in front of the filename indicate the current working directory.
-
-Select the Score button to validate this task:
+    - The dot and slash (i.e., ./) in front of the filename indicate the current working directory.
 
 12. Enter type hash.txt.
 
-- This command displays the contents of the hash.txt file, which is the hash calculated from the notes.txt file.
+    - This command displays the contents of the hash.txt file, which is the hash calculated from the notes.txt file.
 
 13. Enter echo blah >> notes.txt.
 
-- This command injects new content into notes.txt, which changes the file.
+    - This command injects new content into notes.txt, which changes the file.
 
-- The use of double greater-than symbols (i.e., >>) performs an append rather than a replace function when capturing output into a file.
+    - The use of double greater-than symbols (i.e., >>) performs an append rather than a replace function when capturing output into a file.
 
 14. Enter type notes.txt.
 
-- You should see different contents of the notes.txt file.
+    - You should see different contents of the notes.txt file.
 
 15. Enter if((Get-FileHash ./notes.txt -Algorithm SHA256).Hash -eq (Get-Content ./hash.txt)) {Write-Host "The file is correct."} else {Write-Host "The file has changed. Corrective action should be initiated."}.
 
-- This command calculates the hash of notes.txt and compares it to the value stored in hash.txt. Since the file has changed, an error message is displayed.
+    - This command calculates the hash of notes.txt and compares it to the value stored in hash.txt. Since the file has changed, an error message is displayed.
 
 16. Enter "This is important" | Set-Content notes.txt.
 
-This command is the corrective action to reset the contents of notes.txt back to the desired content.
+    - This command is the corrective action to reset the contents of notes.txt back to the desired content.
 
 17. Enter type notes.txt.
 
 18. Enter if((Get-FileHash ./notes.txt -Algorithm SHA256).Hash -eq (Get-Content ./hash.txt)) {Write-Host "The file is correct."} else {Write-Host "The file has changed. Corrective action should be initiated."}.
 
-- This command calculates the hash of notes.txt and compares it to the value stored in hash.txt. Since the file has been restored, a confirmation message is displayed.
+    - This command calculates the hash of notes.txt and compares it to the value stored in hash.txt. Since the file has been restored, a confirmation message is displayed.
 
-- You have performed the corrective control manually. Now configure scripts to automate the process.
+    - You have performed the corrective control manually. Now configure scripts to automate the process.
 
 19. Enter notepad calchash.ps1.
 
@@ -332,17 +311,15 @@ This command is the corrective action to reset the contents of notes.txt back to
 
 22. Close Notepad, select Save when prompted.
 
-Select the Score button to validate this task:
-
 23. Enter ./calchash.ps1.
 
-- This command executes the PowerShell script of calchash.ps1, which generates a hash of the notes.txt file and saves it as hash.txt.. The "Set-Content" cmdlet performs a replacement rather than an append function when writing output into a file.
+    - This command executes the PowerShell script of calchash.ps1, which generates a hash of the notes.txt file and saves it as hash.txt.. The "Set-Content" cmdlet performs a replacement rather than an append function when writing output into a file.
 
-- The dot and slash (i.e., ./) before the script name are essential for execution.
+    - The dot and slash (i.e., ./) before the script name are essential for execution.
 
 24. Enter type hash.txt.
 
-- This command displays the contents of hash.txt
+    - This command displays the contents of hash.txt
 
 25. Enter notepad check.ps1.
 
@@ -362,45 +339,37 @@ else
 
 28. Close Notepad, select Save when prompted.
 
-Select the Score button to validate this task:
-
 29. Enter ./check.ps1.
 
-- This command executes the PowerShell script of check.ps1, which calculates the hash of notes.txt and compares it to the value stored in hash.txt. If the file has not changed, a "No corrective action needed" message is displayed. If the file has changed, an "Corrective action initiated" message is displayed.
+    - This command executes the PowerShell script of check.ps1, which calculates the hash of notes.txt and compares it to the value stored in hash.txt. If the file has not changed, a "No corrective action needed" message is displayed. If the file has changed, an "Corrective action initiated" message is displayed.
 
-- The result should display the "The file is correct. No corrective action needed." message since you previously restored the notes.txt file manually.
+    - The result should display the "The file is correct. No corrective action needed." message since you previously restored the notes.txt file manually.
 
 30. Enter type notes.txt.
 
-- You should see the correct contents of the notes.txt file.
+    - You should see the correct contents of the notes.txt file.
 
 31. Enter echo blah >> notes.txt.
 
-- This command injects new content into notes.txt, which changes the file.
+    - This command injects new content into notes.txt, which changes the file.
 
 32. Enter type notes.txt.
 
-- You should see the modified contents of the notes.txt file.
+    - You should see the modified contents of the notes.txt file.
 
 33. Enter ./check.ps1.
 
-- This should display the "The file has changed. Corrective action initiated." message since the notes.txt file was modified.
-
-What is the typical means (which was used in this exercise) to detect changes in a file?
-
-hashing
-encryption
-authorization
-authentication
+    - This should display the "The file has changed. Corrective action initiated." message since the notes.txt file was modified.
 
 34. Enter type notes.txt.
 
-- You should see the corrected contents of the notes.txt file.
+    - You should see the corrected contents of the notes.txt file.
 
 You have successfully implemented a simulation of a corrective control to repair the contents of a file should that file be modified.
 
-- This corrective action is similar to that performed by the Signature Verification (SigVerif) tool of Windows. SigVerif executes before each booting of Windows to ensure that the necessary files for a secure booting operation are present and meet a specific hash value. If any of those files are corrupted, they are removed and replaced with a valid file. The corrective actions you took manually can be automated to perform similarly. For example, you could schedule a boot task to run the check.ps1 script each time the system reboots. Also, you should run the calchash.ps1 script every time a valid change to notes.txt is performed. However, if you elect to change the contents of notes.txt, the correction action would need to be updated accordingly.
+    - This corrective action is similar to that performed by the Signature Verification (SigVerif) tool of Windows. SigVerif executes before each booting of Windows to ensure that the necessary files for a secure booting operation are present and meet a specific hash value. If any of those files are corrupted, they are removed and replaced with a valid file. The corrective actions you took manually can be automated to perform similarly. For example, you could schedule a boot task to run the check.ps1 script each time the system reboots. Also, you should run the calchash.ps1 script every time a valid change to notes.txt is performed. However, if you elect to change the contents of notes.txt, the correction action would need to be updated accordingly.
 
 Check your work
+
 Confirm that you implemented a corrective control.
 Confirm that you tested a corrective control.
