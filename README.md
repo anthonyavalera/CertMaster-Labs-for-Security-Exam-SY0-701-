@@ -40,8 +40,8 @@ Example below.
 Gap analysis is the act of comparing the current configuration of a system with a template, configuration file, baseline, security framework, or settings documentation. This is an essential operation to discover the differences between the intended or expected configuration of a system and its actual operating configuration. In this exercise, you will perform a gap analysis.
 
 1. Connect to the PC10 virtual machine, send Ctrl+Alt+Delete, select Other User, and sign in as .\admin with the password Pa$$w0rd.
-- Select the Type Text icon to enter the associated text into the virtual machine.
-- Since Jaime may be the default account, you must select Other user, then enter .\admin followed by Pa$$w0rd as the password.
+   - Select the Type Text icon to enter the associated text into the virtual machine.
+   - Since Jaime may be the default account, you must select Other user, then enter .\admin followed by Pa$$w0rd as the password.
 
 2. Determine the build number for the Windows Server 2019 running in thePC10 virtual machine using winver. Select Type here to search from the taskbar, type winver, then select winver from the results.
 
