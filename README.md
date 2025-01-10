@@ -77,7 +77,7 @@ Gap analysis is the act of comparing the current configuration of a system with 
 
 11. Enter the following command to open the Policy Analyzer application:
 
-   C:\LABFILES\PolicyAnalyzer\PolicyAnalyzer_40\PolicyAnalyzer.exe
+      - C:\LABFILES\PolicyAnalyzer\PolicyAnalyzer_40\PolicyAnalyzer.exe
    
 12. The Policy Analyzer window should now be displayed. If needed, minimize the PowerShell window.
 
