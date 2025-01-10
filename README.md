@@ -1,7 +1,6 @@
 # Assisted Lab: Perform System Configuration Gap Analysis
 
 ## Objective
-
 This activity is designed to test your understanding of and ability to apply content examples in the following CompTIA Security+ objectives:
 - 1.2 Summarize fundamental security concepts.
 - 3.2 Given a scenario, apply security principles to secure enterprise infrastructure
