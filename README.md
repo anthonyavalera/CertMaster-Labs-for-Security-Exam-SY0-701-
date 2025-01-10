@@ -46,7 +46,7 @@ Gap analysis is the act of comparing the current configuration of a system with 
 2. Determine the build number for the Windows Server 2019 running in thePC10 virtual machine using winver. Select Type here to search from the taskbar, type winver, then select winver from the results.
 
 3. The About Windows window should be displayed. Look at the second line, which reads “Version 1809 (OS Build 17763.4377)”.
-- The Windows Server 2019 version number 1809 and the OS Build number 17763 are fixed for this challenge. If you perform these operations against other systems, you will need to match the version and build numbers to the baseline template files.
+   - The Windows Server 2019 version number 1809 and the OS Build number 17763 are fixed for this challenge. If you perform these operations against other systems, you will need to match the version and build numbers to the baseline template files.
 
 4. Select OK to close the About Windows window.
 
