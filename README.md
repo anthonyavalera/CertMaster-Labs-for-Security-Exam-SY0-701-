@@ -51,7 +51,7 @@ Gap analysis is the act of comparing the current configuration of a system with 
 4. Select OK to close the About Windows window.
 
 5. Select Type here to search from the taskbar, type powershell, right-click Windows PowerShell from the results, then select Run as administrator.
-- Do no use Windows PowerShell ISE nor Windows PowerShell (X86).
+   - Do no use Windows PowerShell ISE nor Windows PowerShell (X86).
 
 6. Select Yes on the User Account Control window.
 
