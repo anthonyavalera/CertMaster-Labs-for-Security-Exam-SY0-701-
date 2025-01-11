@@ -366,6 +366,7 @@ else
     - You should see the corrected contents of the notes.txt file.
 
 You have successfully implemented a simulation of a corrective control to repair the contents of a file should that file be modified.
+
         - This corrective action is similar to that performed by the Signature Verification (SigVerif) tool of Windows. SigVerif executes before each booting of Windows to ensure that the necessary files for a secure booting operation are present and meet a specific hash value. If any of those files are corrupted, they are removed and replaced with a valid file. The corrective actions you took manually can be automated to perform similarly. For example, you could schedule a boot task to run the check.ps1 script each time the system reboots. Also, you should run the calchash.ps1 script every time a valid change to notes.txt is performed. However, if you elect to change the contents of notes.txt, the correction action would need to be updated accordingly.
 
 Check your work
