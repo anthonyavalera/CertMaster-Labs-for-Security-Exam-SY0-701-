@@ -328,13 +328,20 @@ Next, you will create your own corrective control to simulate the correction fun
 27. Select the empty area of the Notepad window, then select the  below to paste the script into the VM.
 
 if((Get-FileHash ./notes.txt -Algorithm SHA256).Hash -ne (Get-Content ./hash.txt))
+
 {
+
   "This is important" | Set-Content ./notes.txt
   Write-Host "The file has changed. Corrective action initiated."   
+  
 }
+
 else
+
 {
+
   Write-Host "The file is correct. No corrective action needed."
+  
 }
 
 28. Close Notepad, select Save when prompted.
