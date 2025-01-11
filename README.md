@@ -33,38 +33,40 @@ Storage encryption can be implemented in many ways, including full-disk, partiti
 
 Before you encrypt files with EFS, it is important to configure an EFS Recovery Agent first. Otherwise, encrypted files will be unrecoverable and inaccessible if the user's password is changed or if their EFS private key becomes corrupted.
 
-Connect to the PC10 virtual machine, send Ctrl+Alt+Delete and sign in as Jaime with the password Pa$$w0rd.
+1. Connect to the PC10 virtual machine, send Ctrl+Alt+Delete and sign in as Jaime with the password Pa$$w0rd.
 
-You are signing in as Jaime since that account is a domain administrator and the default account for the PC10 system. Once you remove PC10 from the domain, you will use the local administrator account named Admin.
+    - You are signing in as Jaime since that account is a domain administrator and the default account for the PC10 system. Once you remove PC10 from the domain, you will use the local administrator account named Admin.
 
-Select Type here to search from the taskbar, type powershell, then right-click Windows PowerShell from the results, then select Run as administrator.
+2. Select Type here to search from the taskbar, type powershell, then right-click Windows PowerShell from the results, then select Run as administrator.
 
-Select Yes on the User Account Control window.
+3. Select Yes on the User Account Control window.
 
-Enter the following code into the Administrator: Windows PowerShell console:
+4. Enter the following code into the Administrator: Windows PowerShell console:
 
-Remove-Computer -UnjoinDomaincredential Administrator -Restart -Force
-This operation removes the PC10 virtual machine from the domain and configures it as a stand-alone system. This is necessary for this lab in order to simulate the loss of an EFS private key. The process used in this lab to remove a user's EFS private key does not work on a domain member.
+    - Remove-Computer -UnjoinDomaincredential Administrator -Restart -Force
+    - This operation removes the PC10 virtual machine from the domain and configures it as a stand-alone system. This is necessary for this lab in order to simulate the loss of an EFS private key. The process used in this lab to remove a user's EFS private key does not work on a domain member.
 
-On the Windows PowerShell credential request window, type Pa$$w0rd as the password, then select OK
+5. On the Windows PowerShell credential request window, type Pa$$w0rd as the password, then select OK
 
-After a few seconds, the system will reboot.
+    - After a few seconds, the system will reboot.
 
-Connect to the PC10 virtual machine, send Ctrl+Alt+Delete and sign in as Admin with the password Pa$$w0rd.
+6. Connect to the PC10 virtual machine, send Ctrl+Alt+Delete and sign in as Admin with the password Pa$$w0rd.
 
-Since the system is no longer a member of the domain, you must use local accounts. The local administrator account is named admin.
+    - Since the system is no longer a member of the domain, you must use local accounts. The local administrator account is named admin.
 
-Manually create an Encryption File System (EFS) Data Recovery Agent (DRA) certificate stored in a new folder named c:\certificates.
+7. Manually create an Encryption File System (EFS) Data Recovery Agent (DRA) certificate stored in a new folder named c:\certificates.
 
-Expand this hint for guidance.
-Select Type here to search from the taskbar, type cmd, right-click Command Prompt from the results, then select Run as administrator.
+  Expand this hint for guidance.
+  
+    a. Select Type here to search from the taskbar, type cmd, right-click Command Prompt from the results, then select Run as administrator.
 
-Select Yes in the User Account Control window.
+    b. Select Yes in the User Account Control window.
 
-To create a folder, run the command:
+    c. To create a folder, run the command:
 
-mkdir c:\certificates
-To change to the new folder, run the command:
+    - mkdir c:\certificates
+    
+    d. To change to the new folder, run the command:
 
 cd c:\certificates
 To create and export a certificate to be used for EFS recovery agent activities, run the command:
