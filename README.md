@@ -34,54 +34,55 @@ Password spraying attacks are used when a password is known, but the account it 
 
 To get started, you are already aware of a share on MS10 named HR that any user account can access. You also have a list of users from the MS10 system. Let's say you have seen a list of passwords that were discovered in a trash can, but the list did not have any usernames associated with it. You will then attempt to use those passwords against the known accounts in a password spraying attack to mount the HR share.
 
-Connect to the KALI virtual machine and sign in as root using Pa$$w0rd as the password.
+1. Connect to the KALI virtual machine and sign in as root using Pa$$w0rd as the password.
 
-Open a Terminal window by selecting the Terminal Emulator from the Kali Linux toolbar. Then, maximize the Terminal window.
+2. Open a Terminal window by selecting the Terminal Emulator from the Kali Linux toolbar. Then, maximize the Terminal window.
 
-Enter mkdir /mnt/HR to create a mount point.
+3. Enter mkdir /mnt/HR to create a mount point.
 
-A mount point is needed to attach a network share to, assuming you discover valid credentials to access the share.
+    - A mount point is needed to attach a network share to, assuming you discover valid credentials to access the share.
 
-Enter cat users.txt to view a list of users from the MS10 (10.1.16.2) system.
+4. Enter cat users.txt to view a list of users from the MS10 (10.1.16.2) system.
 
-Here is the list of discovered passwords that you think might relate to an account on MS10.
+5. Here is the list of discovered passwords that you think might relate to an account on MS10.
 
-abc123
-123456
-Pa$$w0rd
-Perform your first password submission attempt using the following command:
+    - abc123
+    - 123456
+    - Pa$$w0rd
+    - 
+6. Perform your first password submission attempt using the following command:
 
-mount //10.1.16.2/HR /mnt/HR -o username=pat
-This mount command will attempt to map the Windows share named HR from MS10 (10.1.16.2) to the local mount point of /mnt/HR with the user credentials of pat.
+    - mount //10.1.16.2/HR /mnt/HR -o username=pat
+    - This mount command will attempt to map the Windows share named HR from MS10 (10.1.16.2) to the local mount point of /mnt/HR with the user credentials of pat.
 
-When prompted for a password, enter the first password from your discovered list: abc123.
+7. When prompted for a password, enter the first password from your discovered list: abc123.
 
-This should result in a mount error. This means that this password is not used by that account.
+  This should result in a mount error. This means that this password is not used by that account.
 
-Perform a second password submission attempt using the following command:
+8. Perform a second password submission attempt using the following command:
 
-mount //10.1.16.2/HR /mnt/HR -o username=pat
-When prompted for a password, enter the first password from your discovered list: 123456.
+    - mount //10.1.16.2/HR /mnt/HR -o username=pat
 
-This should result in a mount error. This means that this password is not used by that account.
+9. When prompted for a password, enter the first password from your discovered list: 123456.
 
-Obviously, trying each of the passwords against each of the known user accounts would be very tedious if performed manually. You decide to use an automated tool, but you need to create a file containing the discovered passwords. Enter the following commands:
+  This should result in a mount error. This means that this password is not used by that account.
 
-echo abc123 > pass.txt
-echo 123456 >> pass.txt
-echo 'Pa$$w0rd' >> pass.txt
-cat pass.txt
-You should see a final output of the contents of the pass.txt file you just created, showing the three discovered passwords.
+10. Obviously, trying each of the passwords against each of the known user accounts would be very tedious if performed manually. You decide to use an automated tool, but you need to create a file containing the discovered passwords. Enter the following commands:
 
-If the passwords are not spelled correctly, especially the final one, the subsequent password spraying attack will fail.
+    - echo abc123 > pass.txt
+    - echo 123456 >> pass.txt
+    - echo 'Pa$$w0rd' >> pass.txt
+    - cat pass.txt
 
-Be sure to use single quotes around the Pa$$w0rd password.
+  You should see a final output of the contents of the pass.txt file you just created, showing the three discovered passwords.
 
-The use of double greater-than symbols (i.e., >>) performs an append rather than a replace function when capturing output into a file.
+    - If the passwords are not spelled correctly, especially the final one, the subsequent password spraying attack will fail.
 
-Select the Score button to validate this task:
+      Be sure to use single quotes around the Pa$$w0rd password.
 
-Enter hydra-wizard in the opened Terminal to use the wizard version of the authentication attack tool Hydra. Provide each of the following values as prompted. Press Enter after typing each value. If no value is listed, press Enter to leave it blank or accept the default.
+    - The use of double greater-than symbols (i.e., >>) performs an append rather than a replace function when capturing output into a file.
+
+11. Enter hydra-wizard in the opened Terminal to use the wizard version of the authentication attack tool Hydra. Provide each of the following values as prompted. Press Enter after typing each value. If no value is listed, press Enter to leave it blank or accept the default.
 
 Prompt	Response
 Service	smb
@@ -92,34 +93,28 @@ Test
 Port	
 Module options	
 Run command	Y
-This wizard will run the password spraying attack by using each password against each of the user accounts against the share on MS10.
 
-The results will be displayed, showing that the password spraying attack was able to discover that the Pa$$w0rd password is used by two accounts.
+  This wizard will run the password spraying attack by using each password against each of the user accounts against the share on MS10.
 
-Which two accounts are using the same password?
+  The results will be displayed, showing that the password spraying attack was able to discover that the Pa$$w0rd password is used by two accounts.
 
-Alex
-Logan
-Jordan
-Jaime
-Admin
-Enter the following command to mount the share and confirm the credentials are real.
+12. Enter the following command to mount the share and confirm the credentials are real.
 
-mount //10.1.16.2/HR /mnt/HR -o username=jaime
-Enter Pa$$w0rd as the password when prompted. If no error is displayed, the mounting of the share from MS10 was successful.
+    - mount //10.1.16.2/HR /mnt/HR -o username=jaime
+  Enter Pa$$w0rd as the password when prompted. If no error is displayed, the mounting of the share from MS10 was successful.
 
-Enter ls /mnt/HR to view the contents of the mounted share.
+13. Enter ls /mnt/HR to view the contents of the mounted share.
 
-If you want to dismount the share to try other credential combinations, use umount /mnt/HR.
+    - If you want to dismount the share to try other credential combinations, use umount /mnt/HR.
 
-Leave the Terminal window open.
+14. Leave the Terminal window open.
 
-Password spraying is effectively a simple version of a dictionary attack. But instead of a massive list of potential passwords, a password spraying attack uses a single or a short list of known passwords (or assumed known) for a user within a specific environment. The goal of password spraying is to discover which user account the password is used by. The hydra tool used in this exercise can be used to perform full dictionary attacks as well as brute force attacks.
+    - Password spraying is effectively a simple version of a dictionary attack. But instead of a massive list of potential passwords, a password spraying attack uses a single or a short list of known passwords (or assumed known) for a user within a specific environment. The goal of password spraying is to discover which user account the password is used by. The hydra tool used in this exercise can be used to perform full dictionary attacks as well as brute force attacks.
 
-...less
-This password spraying exercise demonstrates the importance of good password management. In a real-world scenario, you should improve user training and implement password complexity requirements. You should encourage users to make longer and more complex passwords. You should remind them not to write down passwords unless absolutely necessary and then shred the paper once it is no longer needed. You can also elect to implement password complexity and strength requirements through security configurations.
+  This password spraying exercise demonstrates the importance of good password management. In a real-world scenario, you should improve user training and implement password complexity requirements. You should encourage users to make longer and more complex passwords. You should remind them not to write down passwords unless absolutely necessary and then shred the paper once it is no longer needed. You can also elect to implement password complexity and strength requirements through security configurations.
 
-Check your work
+#### Check your work
+
 Confirm that you attempted manual password spraying.
 Confirm that you perform automated password spraying.
 
