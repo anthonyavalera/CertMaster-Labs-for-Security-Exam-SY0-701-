@@ -302,24 +302,26 @@ Based on your findings from your password spraying, dictionary, and brute force 
 
 8. Enter the following commands to implement these password policy changes:
 
-Set-ADDefaultDomainPasswordPolicy -Identity structureality -LockoutObservationWindow 00:15:00
-Set-ADDefaultDomainPasswordPolicy -Identity structureality -LockoutDuration 00:15:00
-Set-ADDefaultDomainPasswordPolicy -Identity structureality -LockoutThreshold 3
-Set-ADDefaultDomainPasswordPolicy -Identity structureality -MaxPasswordAge 365.00:00:00
-Set-ADDefaultDomainPasswordPolicy -Identity structureality -MinPasswordAge 3.00:00:00
-Set-ADDefaultDomainPasswordPolicy -Identity structureality -MinPasswordLength 12
-The time definitions are using the format of D:H:M:S.F where: D = Days (0 to 10675199); H = Hours (0 to 23); M = Minutes (0 to 59); S = Seconds (0 to 59); and F = Fractions of a second (0 to 9999999).
+        - Set-ADDefaultDomainPasswordPolicy -Identity structureality -LockoutObservationWindow 00:15:00
+        - Set-ADDefaultDomainPasswordPolicy -Identity structureality -LockoutDuration 00:15:00
+        - Set-ADDefaultDomainPasswordPolicy -Identity structureality -LockoutThreshold 3
+        - Set-ADDefaultDomainPasswordPolicy -Identity structureality -MaxPasswordAge 365.00:00:00
+        - Set-ADDefaultDomainPasswordPolicy -Identity structureality -MinPasswordAge 3.00:00:00
+        - Set-ADDefaultDomainPasswordPolicy -Identity structureality -MinPasswordLength 12
+        - The time definitions are using the format of D:H:M:S.F where: D = Days (0 to 10675199); H = Hours (0 to 23); M = Minutes (0 to 59); S = Seconds (0 to 59); and F = Fractions of a second (0 to 9999999).
 
-You can make these same changes through the GUI interface of Group Policy Management.
+        - You can make these same changes through the GUI interface of Group Policy Management.
 
-Enter the following command to display the results of your changes to the domain password policy:
+9. Enter the following command to display the results of your changes to the domain password policy:
 
-Get-ADDefaultDomainPasswordPolicy
-You should see the new values for several of the parameters of the password policy.
+        - Get-ADDefaultDomainPasswordPolicy
+   
+    You should see the new values for several of the parameters of the password policy.
 
-All existing account passwords are allowed to remain in their current non-compliant state. However, once the user changes their passwords, the new complexity requirements, such as length, will be enforced. You could choose to force all accounts to change their passwords upon their next sign in using the commands Get-ADUser -Filter * | Set-ADUser -PasswordNeverExpires $False and Get-ADUser -Filter * | Set-ADUser -ChangePasswordAtLogon $True. The first of these commands removes the password never expires state, and the second sets the password change required at logon state.
+        - All existing account passwords are allowed to remain in their current non-compliant state. However, once the user changes their passwords, the new complexity requirements, such as length, will be enforced. You could choose to force all accounts to change their passwords upon their next sign in using the commands Get-ADUser -Filter * | Set-ADUser -PasswordNeverExpires $False and Get-ADUser -Filter * | Set-ADUser -ChangePasswordAtLogon $True. The first of these commands removes the password never expires state, and the second sets the password change required at logon state.
 
-...less
-Check your work
+#### Check your work
+
 Confirm that you viewed the current domain password policy.
+
 Confirm that you set new values for the domain password policy.
