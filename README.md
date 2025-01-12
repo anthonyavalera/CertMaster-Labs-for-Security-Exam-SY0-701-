@@ -111,11 +111,12 @@ Run command	Y
 
     - Password spraying is effectively a simple version of a dictionary attack. But instead of a massive list of potential passwords, a password spraying attack uses a single or a short list of known passwords (or assumed known) for a user within a specific environment. The goal of password spraying is to discover which user account the password is used by. The hydra tool used in this exercise can be used to perform full dictionary attacks as well as brute force attacks.
 
-  This password spraying exercise demonstrates the importance of good password management. In a real-world scenario, you should improve user training and implement password complexity requirements. You should encourage users to make longer and more complex passwords. You should remind them not to write down passwords unless absolutely necessary and then shred the paper once it is no longer needed. You can also elect to implement password complexity and strength requirements through security configurations.
+This password spraying exercise demonstrates the importance of good password management. In a real-world scenario, you should improve user training and implement password complexity requirements. You should encourage users to make longer and more complex passwords. You should remind them not to write down passwords unless absolutely necessary and then shred the paper once it is no longer needed. You can also elect to implement password complexity and strength requirements through security configurations.
 
 #### Check your work
 
 Confirm that you attempted manual password spraying.
+
 Confirm that you perform automated password spraying.
 
 ### Perform a dictionary password crack
@@ -124,191 +125,182 @@ Password cracking demonstrates just how important long and complex passwords are
 
 In this exercise, you will be using John the Ripper (JtR or john) to perform a dictionary attack against password hashes taken from MS10. This form of password crack is an offline attack as it does not involve a live/active/online authentication service. Instead, it is a direct attack against password hashes.
 
-A live or online attack is limited in the speed at which attempts can be made. It can take a fraction of a second to several seconds for each failed login attempt against a live authentication service. An offline attack is limited by the computational capability of the local processor. Often, 10 billion or more password crack attempts can be made per second. Also, an online attack can be stopped with account lockout (such as when only three (3) attempts are allowed), while an offline attack is not limited by account lockout because the authentication service is not involved in the attack.
+    - A live or online attack is limited in the speed at which attempts can be made. It can take a fraction of a second to several seconds for each failed login attempt against a live authentication service. An offline attack is limited by the computational capability of the local processor. Often, 10 billion or more password crack attempts can be made per second. Also, an online attack can be stopped with account lockout (such as when only three (3) attempts are allowed), while an offline attack is not limited by account lockout because the authentication service is not involved in the attack.
 
-...less
-Connect to the KALI virtual machine and, if needed, sign in as root using Pa$$w0rd as the password.
+1. Connect to the KALI virtual machine and, if needed, sign in as root using Pa$$w0rd as the password.
 
-The Terminal window should still be open.
+2. The Terminal window should still be open.
 
-Enter cat ms10-hashes.txt to display the collected user account details and password hashes from MS10.
+3. Enter cat ms10-hashes.txt to display the collected user account details and password hashes from MS10.
 
-Notice the account with a RID of 500 (the default administrator account of Windows) has a username of admin. Also, the account with a RID of 501 is the default Guest account which is usually disabled and has a blank password by default.
+        - Notice the account with a RID of 500 (the default administrator account of Windows) has a username of admin. Also, the account with a RID of 501 is the default Guest account which is usually disabled and has a blank password by default.
 
-This file contains the user account details and password hashes extracted from MS10.
+        - This file contains the user account details and password hashes extracted from MS10.
 
-Display a list of available dictionary password files by entering the following:
+4. Display a list of available dictionary password files by entering the following:
 
-ls -lSr /usr/share/seclists/Passwords
-This command presents the long list of directory contents sorted by smallest to largest.
+        - ls -lSr /usr/share/seclists/Passwords
+    This command presents the long list of directory contents sorted by smallest to largest.
 
-The parameters used in this ls command are -l for long list format, -S for sort by size, largest first, and -r, which reverses the sorting order (i.e., smallest first).
+        - The parameters used in this ls command are -l for long list format, -S for sort by size, largest first, and -r, which reverses the sorting order (i.e., smallest first).
 
-There are numerous password lists included with Kali. You will use the xato-net-10-million-passwords.txt file as it is primarily English-focused and is one of the largest options.
+        - There are numerous password lists included with Kali. You will use the xato-net-10-million-passwords.txt file as it is primarily English-focused and is one of the largest options.
 
-A dictionary-based password crack is only able to discover passwords when the list contains an exact match to a user’s password. If the user employed a different case or a different letter, then a dictionary-list-based password cracking approach would not be successful.
+        - A dictionary-based password crack is only able to discover passwords when the list contains an exact match to a user’s password. If the user employed a different case or a different letter, then a dictionary-list-based password cracking approach would not be successful.
 
-Enter the following to initiate a dictionary attack against the hash file:
+5. Enter the following to initiate a dictionary attack against the hash file:
 
-john --format=NT --wordlist=/usr/share/seclists/Passwords/xato-net-10-million-passwords.txt ms10-hashes.txt
-This command initiates John the Ripper to perform a dictionary-based password crack. The parameters used are:
+        - john --format=NT --wordlist=/usr/share/seclists/Passwords/xato-net-10-million-passwords.txt ms10-hashes.txt
+    This command initiates John the Ripper to perform a dictionary-based password crack. The parameters used are:
 
-"--format" sets the hash algorithm to be compromised. Here NT stands for NTLM.
-"--wordlist" sets the password list to use.
-This attack will only take a few seconds - even with a 10 million password dictionary file.
+        - "--format" sets the hash algorithm to be compromised. Here NT stands for NTLM.
+        - "--wordlist" sets the password list to use.
+    This attack will only take a few seconds - even with a 10 million password dictionary file.
 
-A dictionary attack is a form of offline password cracking as it uses stolen password hashes and does not interact with a live authentication system. A dictionary attack performs a hash of each password in the source list file and then compares the resulting hash to the target hash(es) pulled from the hash file. If a matching hash is discovered (a.k.a. hash collision), then a password has been found. If not, the next password in the list is used. Most systems can perform billions of password hashes per second. Therefore even with large dictionary lists, the attack concludes quickly.
+        - A dictionary attack is a form of offline password cracking as it uses stolen password hashes and does not interact with a live authentication system. A dictionary attack performs a hash of each password in the source list file and then compares the resulting hash to the target hash(es) pulled from the hash file. If a matching hash is discovered (a.k.a. hash collision), then a password has been found. If not, the next password in the list is used. Most systems can perform billions of password hashes per second. Therefore even with large dictionary lists, the attack concludes quickly.
 
-...less
-Microsoft's NTLM (Windows New Technology LAN Manager) is a security protocol suite that ensures the security, integrity, and confidentiality of users' activity by authenticating their identity. It serves as a single sign-on (SSO) tool that uses a challenge-response protocol to verify the user's identity without the need to enter a password. Despite the existence of known weaknesses, NTLM is still commonly used, even on new systems, to guarantee compatibility with legacy clients and servers.
+        - Microsoft's NTLM (Windows New Technology LAN Manager) is a security protocol suite that ensures the security, integrity, and confidentiality of users' activity by authenticating their identity. It serves as a single sign-on (SSO) tool that uses a challenge-response protocol to verify the user's identity without the need to enter a password. Despite the existence of known weaknesses, NTLM is still commonly used, even on new systems, to guarantee compatibility with legacy clients and servers.
 
-...less
-Notice how many of the passwords of the targeted accounts were cracked using the dictionary technique. However, there are still a few more accounts whose passwords are yet to be compromised.
+    Notice how many of the passwords of the targeted accounts were cracked using the dictionary technique. However, there are still a few more accounts whose passwords are yet to be compromised.
 
-While you could attempt to crack the other outstanding passwords using other dictionary files. Unfortunately, none of the other dictionary files in this lab environment have any additional passwords for the target user accounts from this hash file from MS10.
+        - While you could attempt to crack the other outstanding passwords using other dictionary files. Unfortunately, none of the other dictionary files in this lab environment have any additional passwords for the target user accounts from this hash file from MS10.
 
-Enter the following to export the compromised passwords along with the information from the hash source file into a separate file:
+6. Enter the following to export the compromised passwords along with the information from the hash source file into a separate file:
 
-john --show --format=NT ms10-hashes.txt > dict-cracked.txt
-With the selected dictionary file, John the Ripper should have cracked 12 passwords using the dictionary password cracking method.
+        - john --show --format=NT ms10-hashes.txt > dict-cracked.txt
+    With the selected dictionary file, John the Ripper should have cracked 12 passwords using the dictionary password cracking method.
 
-You still need to include the --format parameter to export the NTLM cracked password results.
+        - You still need to include the --format parameter to export the NTLM cracked password results.
 
-Select the Score button to validate this task:
+7. Enter the following to view the file.
 
-Enter the following to view the file.
+        - less dict-cracked.txt 
+        - Notice that JtR has placed the cracked password between the username and the RID value in this presentation.
+        - When using the less file viewing utility, press the spacebar to view the next page. You can return to a previous page using b or scroll one line up or down utilizing the arrow keys. When finished looking over the results, type q to exit the less viewer.
 
-less dict-cracked.txt 
-Notice that JtR has placed the cracked password between the username and the RID value in this presentation.
+8. Enter the following to display the accounts that have not yet been compromised.
 
-When using the less file viewing utility, press the spacebar to view the next page. You can return to a previous page using b or scroll one line up or down utilizing the arrow keys. When finished looking over the results, type q to exit the less viewer.
+        - john --show=left --format=NT ms10-hashes.txt
+        - There may be a discrepancy between the two --show operations in regards to the number of passwords cracked. Two accounts have blank passwords. This is counted as two successes by the --show operation but counted as only one success by the --show=left operation.
 
-Enter the following to display the accounts that have not yet been compromised.
+9. Leave the Terminal window open.
 
-john --show=left --format=NT ms10-hashes.txt
-There may be a discrepancy between the two --show operations in regards to the number of passwords cracked. Two accounts have blank passwords. This is counted as two successes by the --show operation but counted as only one success by the --show=left operation.
-
-Leave the Terminal window open.
-
-Password guessing is a form of online or live password attack. It is a live or online attack as it requires working against the actual authentication system of the target. In a password guessing attack, you can make up passwords yourself, use a dictionary list, or use a brute force approach. Account lockout is used to prevent continuous password guessing by disabling accounts after a limited number of failed login attempts.
+        - Password guessing is a form of online or live password attack. It is a live or online attack as it requires working against the actual authentication system of the target. In a password guessing attack, you can make up passwords yourself, use a dictionary list, or use a brute force approach. Account lockout is used to prevent continuous password guessing by disabling accounts after a limited number of failed login attempts.
 
 This dictionary-based password cracking exercise demonstrates the importance of good password management. In a real-world scenario, you should improve user training and implement password complexity requirements. You need to encourage users to make longer and more complex passwords. You can also elect to implement password complexity and strength requirements through security configurations.
 
-Check your work
+#### Check your work
+
 Confirm that you performed dictionary password cracking.
 
 ### Perform a brute force password crack
 
 In this exercise, you will be using John the Ripper (JtR) to perform a brute force attack against the password hashes taken from MS10. This form of password crack is also an offline attack as it does not involve a live/active/online authentication service. Instead, it is a direct attack against password hashes.
 
-Connect to the KALI virtual machine and, if needed, sign in as root using Pa$$w0rd as the password.
+1. Connect to the KALI virtual machine and, if needed, sign in as root using Pa$$w0rd as the password.
 
-The Terminal window should still be open.
+2. The Terminal window should still be open.
 
-Enter the following to clear the history of cracked passwords (i.e., the ones you cracked using a dictionary approach in the previous exercise). This enables you to see the operation of a brute force attack more clearly by having all target hashes available.
+3. Enter the following to clear the history of cracked passwords (i.e., the ones you cracked using a dictionary approach in the previous exercise). This enables you to see the operation of a brute force attack more clearly by having all target hashes available.
 
-rm ~/.john/john.pot
-Enter the following to initiate a brute force attack (known as incremental by John the Ripper) against the hashes from MS10.
+        - rm ~/.john/john.pot
+   
+5. Enter the following to initiate a brute force attack (known as incremental by John the Ripper) against the hashes from MS10.
 
-john --format=NT --incremental ms10-hashes.txt
-You will be prompted to "press almost any other key for status." Press SPACEBAR to see a status update on the progress and the time elapsed.
+        - john --format=NT --incremental ms10-hashes.txt
+    You will be prompted to "press almost any other key for status." Press SPACEBAR to see a status update on the progress and the time elapsed.
 
-The process of brute force attack is based on attempting all possible patterns of characters based on length. John the Ripper's default configuration will use all standard ASCII's 95 printable characters (i.e., positions 32 - 127 in the 7-bit ASCII table), including lowercase, uppercase, numbers, and symbols. It will also attempt potential passwords up to 13 characters in length. However, the more complex and/or longer a password, the more time is required to compromise it with this method. Brute force has the potential to discover all possible passwords, but only if given sufficient computing capability and time.
+        - The process of brute force attack is based on attempting all possible patterns of characters based on length. John the Ripper's default configuration will use all standard ASCII's 95 printable characters (i.e., positions 32 - 127 in the 7-bit ASCII table), including lowercase, uppercase, numbers, and symbols. It will also attempt potential passwords up to 13 characters in length. However, the more complex and/or longer a password, the more time is required to compromise it with this method. Brute force has the potential to discover all possible passwords, but only if given sufficient computing capability and time.
 
 While the default mode of JtR is ASCII, this is a bit of a legacy holdover as most systems use UTF-8 as their standard character mode. UTF-8 is backward compatible with ASCII since the first 128 characters of UTF-8 are the entire ASCII 7-bit table.
 
 As of JtR version 1.9.0, pre-defined incremental modes are "ASCII" (all 95 printable ASCII characters), "LM_ASCII" (for use on LM hashes), "Alnum" (all 62 alphanumeric characters), "Alpha" (all 52 letters), "LowerNum" (lowercase letters plus digits, for 36 total), "UpperNum" (uppercase letters plus digits, for 36 total), "LowerSpace" (lowercase letters plus space, for 27 total), "Lower" (lowercase letters), "Upper" (uppercase letters), and "Digits" (digits only). You can define custom incremental (i.e., brute force) modes.
 
-...less
-You should see some quick successes for accounts with simple and short passwords. Then, several more passwords will be cracked within a minute or so.
+5. You should see some quick successes for accounts with simple and short passwords. Then, several more passwords will be cracked within a minute or so.
 
-Allow the attack to run for up to 5 minutes or until the renee account's password is cracked. Once sufficient time has passed type q to exit John the Ripper.
+6. Allow the attack to run for up to 5 minutes or until the renee account's password is cracked. Once sufficient time has passed type q to exit John the Ripper.
 
-The longer you wait while the brute force attack continues, the longer and more complex passwords will be cracked by John the Ripper.
+        - The longer you wait while the brute force attack continues, the longer and more complex passwords will be cracked by John the Ripper.
 
-Enter the following to display the compromised passwords along with the information from the hash source file.
+7. Enter the following to display the compromised passwords along with the information from the hash source file.
 
-john --show --format=NT ms10-hashes.txt
-Notice you still need to include the --format parameter.
+        - john --show --format=NT ms10-hashes.txt
+        - Notice you still need to include the --format parameter.
 
-If you allowed John the Ripper to run for a full 5 minutes, it should have compromised 10 passwords using the brute force password cracking method.
+    If you allowed John the Ripper to run for a full 5 minutes, it should have compromised 10 passwords using the brute force password cracking method.
 
-Enter the following to save the brute-force-cracked passwords to a text file.
+8. Enter the following to save the brute-force-cracked passwords to a text file.
 
-john --show --format=NT ms10-hashes.txt > brute-cracked.txt
-Select the Score button to validate this task:
+        - john --show --format=NT ms10-hashes.txt > brute-cracked.txt
 
-Enter the following to view the file.
+9. Enter the following to view the file.
 
-less brute-cracked.txt 
-Notice that JtR has placed the cracked password between the username and the RID value in this presentation.
+        - less brute-cracked.txt 
+        - Notice that JtR has placed the cracked password between the username and the RID value in this presentation.
+        - When using the less file viewing utility, press the spacebar to view the next page. You can return to a previous page using b or scroll one line up or down utilizing the arrow keys. When finished looking over the results, type q to exit the less viewer.
 
-When using the less file viewing utility, press the spacebar to view the next page. You can return to a previous page using b or scroll one line up or down utilizing the arrow keys. When finished looking over the results, type q to exit the less viewer.
+10. Enter the following to display the accounts that have not yet been compromised.
 
-Enter the following to display the accounts that have not yet been compromised.
+        - john --show=left --format=NT ms10-hashes.txt
+    
+11. Enter the following to run a brute force attack limited to a maximum password length of 6 characters.
 
-john --show=left --format=NT ms10-hashes.txt
-Enter the following to run a brute force attack limited to a maximum password length of 6 characters.
+        - john --format=NT --incremental --max-length=6 ms10-hashes.txt
+    
+12. Let the attack run for a few moments, then press SPACEBAR.
 
-john --format=NT --incremental --max-length=6 ms10-hashes.txt
-Let the attack run for a few moments, then press SPACEBAR.
+        - Notice the status update includes a percentage of completion and an ETA for the attack to be completed. The ETA for this operation is many hours.
 
-Notice the status update includes a percentage of completion and an ETA for the attack to be completed. The ETA for this operation is many hours.
+13. Type q to terminate John the Ripper.
 
-Type q to terminate John the Ripper.
+14. Enter the following to run a brute force attack limited to a maximum password length of 7 characters.
 
-Enter the following to run a brute force attack limited to a maximum password length of 7 characters.
+        - john --format=NT --incremental --max-length=7 ms10-hashes.txt
+15. Press SPACEBAR.
 
-john --format=NT --incremental --max-length=7 ms10-hashes.txt
-Press SPACEBAR.
+        - Notice the status update includes a percentage of completion and an ETA for the attack to be completed. The ETA for this operation is a date rather than a countdown timer. The ETA will be weeks in the future. If you set max-length to 8, John no longer calculates the ETA. However, it would be several years since each additional character length expands the range of password options by a factor of the domain of character options (with the default ASCII mode, there are 95).
 
-Notice the status update includes a percentage of completion and an ETA for the attack to be completed. The ETA for this operation is a date rather than a countdown timer. The ETA will be weeks in the future. If you set max-length to 8, John no longer calculates the ETA. However, it would be several years since each additional character length expands the range of password options by a factor of the domain of character options (with the default ASCII mode, there are 95).
-
-Type q to terminate John the Ripper.
+16. Type q to terminate John the Ripper.
 
 This brute force based password cracking exercise demonstrates the importance of good password management. In a real-world scenario, you should improve user training and implement password complexity requirements. You need to encourage users to make longer and more complex passwords. You can also elect to implement password complexity and strength requirements through security configurations.
 
-Check your work
+#### Check your work
+
 Confirm that you performed brute force password cracking.
 
 ### Set password policy for a domain
 
 Based on your findings from your password spraying, dictionary, and brute force attacks, you realize that the organization's domain-wide password policy needs to be improved. You have also reviewed the NIST Special Publication 800-63B: Digital Identity Guidelines: Authentication and Lifecycle Management: (https://pages.nist.gov/800-63-3/sp800-63b.html). You have decided to make a few changes to the password and account lockout policy for the Structureality domain.
 
-Connect to the DC10 virtual machine. Send Ctrl+Alt+Delete and sign in as Structureality\Administrator using Pa$$w0rd as the password.
+1. Connect to the DC10 virtual machine. Send Ctrl+Alt+Delete and sign in as Structureality\Administrator using Pa$$w0rd as the password.
 
-Minimize or close Server Manager if it appears. It will not be used in this lab.
+2. Minimize or close Server Manager if it appears. It will not be used in this lab.
 
-Select Type here to search from the taskbar, type powershell, right-click Windows PowerShell from the results, then select Run as administrator.
+3. Select Type here to search from the taskbar, type powershell, right-click Windows PowerShell from the results, then select Run as administrator.
 
-Select Yes on the User Account Control window.
+4. Select Yes on the User Account Control window.
 
-The PowerShell console should be displayed.
+    The PowerShell console should be displayed.
 
-Enter the following command to load the PowerShell module needed to interact with Active Directory:
+5. Enter the following command to load the PowerShell module needed to interact with Active Directory:
 
-Import-Module ActiveDirectory
-Enter the following command to display the current password policy for the domain:
+        - Import-Module ActiveDirectory
+   
+6. Enter the following command to display the current password policy for the domain:
 
-Get-ADDefaultDomainPasswordPolicy
-What domain password policy settings are currently defined? (Select all that apply)
+        - Get-ADDefaultDomainPasswordPolicy
 
-ComplexityEnabled: True
-MaxPasswordAge: 42
-LockoutDuration: 00:15:00
-LockoutThreshold: 0
-MinPasswordAge: 3
-MinPasswordLength: 7
-Based on the current settings, you want to make the following changes:
+7. Based on the current settings, you want to make the following changes:
 
-Key	Value
-LockoutObservationWindow	00:15:00
-LockoutDuration	00:15:00
-LockoutThreshold	3
-MaxPasswordAge	365
-MinPasswordAge	3
-MinPasswordLength	12
-Enter the following commands to implement these password policy changes:
+| Key	| Value |
+LockoutObservationWindow	| 00:15:00 |
+LockoutDuration |	00:15:00 |
+LockoutThreshold	| 3 |
+MaxPasswordAge	| 365 |
+MinPasswordAge	| 3 |
+MinPasswordLength	| 12| 
+
+8. Enter the following commands to implement these password policy changes:
 
 Set-ADDefaultDomainPasswordPolicy -Identity structureality -LockoutObservationWindow 00:15:00
 Set-ADDefaultDomainPasswordPolicy -Identity structureality -LockoutDuration 00:15:00
