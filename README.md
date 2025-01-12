@@ -207,6 +207,8 @@ Mountd (i.e., NFS)
 - grep OS server-scan.nmap
 - The OS of this server is Windows Server 2016. This OS has reached its EOL (End of Life) which occured on Jan 11, 2022. This means it is no longer considered an actively developed and supported OS. However, it may continue to receive update for security issue only through Jan 12, 2027. At that date it will be an EOSL (End of Service Life) system. This system should be slated for replacement before it reaches the EOSL date.
 
-Check your work
+#### Check your work
+
 Confirm that you performed a network discovery and enumeration scan against a target.
+
 Confirm that you evaluated the threat vectors and attack surface revealed by the scan.
