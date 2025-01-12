@@ -293,12 +293,12 @@ Based on your findings from your password spraying, dictionary, and brute force 
 7. Based on the current settings, you want to make the following changes:
 
 | Key	| Value |
-LockoutObservationWindow	| 00:15:00 |
-LockoutDuration |	00:15:00 |
-LockoutThreshold	| 3 |
-MaxPasswordAge	| 365 |
-MinPasswordAge	| 3 |
-MinPasswordLength	| 12| 
+| LockoutObservationWindow	| 00:15:00 |
+| LockoutDuration |	00:15:00 |
+| LockoutThreshold	| 3 |
+| MaxPasswordAge	| 365 |
+| MinPasswordAge	| 3 |
+| MinPasswordLength	| 12| 
 
 8. Enter the following commands to implement these password policy changes:
 
