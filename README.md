@@ -55,7 +55,7 @@ This exercise uses the DVWA as the target of several database exploitations. How
 
 6. The results should confirm that the User ID of 1 is the admin. Notice that the URL has changed to include parameters. It should look like the following:
 
-  - dvwa.structureality.com/vulnerabilities/sqli/?id=1&Submit=Submit#
+  dvwa.structureality.com/vulnerabilities/sqli/?id=1&Submit=Submit#
   - The URL displayed after a form field submission often reveals details about the variables used in the server-side script. In a real-world situation, you would use this information to predict how the code is crafted and work towards discovering SQL statements that will enable you to perform arbitrary commands against the database or its underlying OS. In this DVWA simulation, you could select the View Source button at the bottom of the page to see the actual code in use on the server. Knowing the server script code is immensely helpful in discovering vulnerabilities to take advantage of.
 
 7. Type 7 into the User ID: field, then select Submit.
@@ -81,8 +81,7 @@ This exercise uses the DVWA as the target of several database exploitations. How
 11. Select the back button on the Firefox toolbar to return to the Vulnerability: SQL Injection page.
 
 12. Test to see if you can exploit the server script through Boolean logic. Type the following into the User ID: field, and then select Submit.
-
-  - 1' or '1'='1
+  1' or '1'='1
   - This is a typical initial SQLi method that uses logic to trick the target into revealing more information than its programmers intended. The concept is, you are setting up an OR expression between a variable condition (i.e., whether a User ID exists) and a tautology (i.e., a statement of truth (e.g., 1=1)). The results of this statement will always be true regardless of whether the variable condition is true. This results in a lack of context for the remainder of the script, which instead of returning a single entry as intended, the script may return all entries.
 
   - If you make a mistake in typing any of the SQLi statements and receive an error instead of the expected result, then use the back arrow on the Firefox toolbar to return to the Vulnerability: SQL Injection page and try again. Any mistakes you make will be reflected in the DVWA website access log on the LAMP host. You will see all of your submitted or injected values during the investigate SQLi exercise.
@@ -91,7 +90,7 @@ This exercise uses the DVWA as the target of several database exploitations. How
 
 14. A common next step is to determine the column query limit. You must know the column query limit to abuse it. This will require trial and error to determine. Enter the following into the User ID: field, then select Submit.
 
-  - ' ORDER BY 1#
+  ' ORDER BY 1#
   - Most SQL injection statements start with a single quote (i.e., '). This initial single quote is used to terminate the string (i.e., whatever data is normally typed into the input field) assignment to a variable in the script on the web server. This means whatever follows that initial single quote will be perceived by the web server as code instead of string input. Be sure you are typing in the leading single quote, then a space, then the "ORDER BY…" statement.
 
   - The final octothorp (i.e., #) is used here as the end-of-line comment function for this MySQL target (you discovered the identity of this DBMS from the error message earlier). There are variations of SQL syntax between some DBMSes. For example, some DBMSes use double-dash (i.e., --) for this purpose.
@@ -109,7 +108,7 @@ This exercise uses the DVWA as the target of several database exploitations. How
 
 18. Enter the following into the User ID: field, then select Submit.
 
-  - ' ORDER BY 3#
+  ' ORDER BY 3#
 
 19. This should result in an error message of "Unknown column '3' in 'order clause'". This indicates that the table has two (2) columns.
 
@@ -128,135 +127,118 @@ This exercise uses the DVWA as the target of several database exploitations. How
 
 "NULL" is used as a placeholder in the second value position of the query.
 
-The results should show the DBMS version as "10.5.19-MariaDB-0+deb11u2" in the "First name:" field and the "Surname:" field should be empty.
+22. The results should show the DBMS version as "10.5.19-MariaDB-0+deb11u2" in the "First name:" field and the "Surname:" field should be empty.
 
-Type the following command into the User ID: field, then select Submit:
+23. Type the following command into the User ID: field, then select Submit:
 
-' UNION SELECT table_schema, table_name FROM information_schema.tables#
-This SQLi expression is attempting to request two columns of data (i.e., table_schema, table_name) from the default DMBS database information container of MySQL (i.e., information_schema.tables). The table_schema value will be the name of the database (displayed on the First name: lines), and the table_name will be the name of a table within the database (displayed on the Surname lines).
+  ' UNION SELECT table_schema, table_name FROM information_schema.tables#
+  - This SQLi expression is attempting to request two columns of data (i.e., table_schema, table_name) from the default DMBS database information container of MySQL (i.e., information_schema.tables). The table_schema value will be the name of the database (displayed on the First name: lines), and the table_name will be the name of a table within the database (displayed on the Surname lines).
 
-The results should be a long list of database and table names. Since you know you are working against a DVWA website, the database of the same name is most likely being used. Look for the "dvwa" name in the "First name:" field and the names of the tables it contains in the "Surname:" field.
+24. The results should be a long list of database and table names. Since you know you are working against a DVWA website, the database of the same name is most likely being used. Look for the "dvwa" name in the "First name:" field and the names of the tables it contains in the "Surname:" field.
 
-Keep in mind that the server script controls the presentation and organization of the retrieved database, while your injected command only affects what data is retrieved. So, the server-determined data layout and labeling are still being used to present the data you pulled from the table.
+  - Keep in mind that the server script controls the presentation and organization of the retrieved database, while your injected command only affects what data is retrieved. So, the server-determined data layout and labeling are still being used to present the data you pulled from the table.
 
-You might want to use the browser's search function (via CTRL+F) to find the entries with dvwa in the "First name:" field.
+  - You might want to use the browser's search function (via CTRL+F) to find the entries with dvwa in the "First name:" field.
 
-What is the first table name discovered from the DVWA database?
+25. You now need to discover the column names of the tables. However, the fastest way to do that results in all columns from all tables being dumped at once. Type the following command into the User ID: field, then select Submit:
 
-What is the second table name discovered from the DVWA database?
+  ' UNION SELECT table_name, column_name FROM information_schema.columns#
+  - This SQLi expression is attempting to request two columns of data (i.e., table_name, column_name) from the default DMBS table information container of MySQL (i.e., information_schema.columns). The table_name value will be the table's name (displayed on the First name: lines), and the column_name will be the name of a column within the table (displayed on the Surname lines).
 
-You now need to discover the column names of the tables. However, the fastest way to do that results in all columns from all tables being dumped at once. Type the following command into the User ID: field, then select Submit:
+26. The results should be a long list of table and column names. You elect to focus on the users table. Look for the "users" name in the "First name:" field and the contained column names in the "Surname:" field. Unfortunately, the order presentation of the columns is not always consistent, nor are all the column names from the same table necessarily grouped together.
 
-' UNION SELECT table_name, column_name FROM information_schema.columns#
-This SQLi expression is attempting to request two columns of data (i.e., table_name, column_name) from the default DMBS table information container of MySQL (i.e., information_schema.columns). The table_name value will be the table's name (displayed on the First name: lines), and the column_name will be the name of a column within the table (displayed on the Surname lines).
+27. Press CTRL+F on your keyboard to open the find function toolbar of Firefox. The find toolbar should appear at the bottom of the Firefox window.
 
-The results should be a long list of table and column names. You elect to focus on the users table. Look for the "users" name in the "First name:" field and the contained column names in the "Surname:" field. Unfortunately, the order presentation of the columns is not always consistent, nor are all the column names from the same table necessarily grouped together.
+28. In the empty search term field of the Firefox find toolbar, enter name: users, and then select to mark the Highlight All checkbox.
 
-Press CTRL+F on your keyboard to open the find function toolbar of Firefox. The find toolbar should appear at the bottom of the Firefox window.
+ There should be ten (10) results of column names from the users table. However, you only care about seven (7) of them (see Note). Select the up and down arrows on the Firefox Find toolbar to move between the results to view them all.
 
-In the empty search term field of the Firefox find toolbar, enter name: users, and then select to mark the Highlight All checkbox.
+  - There are some results you can ignore, as they are not actual columns of the users table but are related to the operations and communications with the users table. These results will all be capitalized. They are: USERS, CURRENT_CONNECTIONS, and TOTAL_CONNECTIONS. (You could also see MAX_SESSION_CONTROLLED_MEMORY and MAX_SESSION_TOTAL_MEMORY,. but these are not useful in this context either). The actual users table column names will be listed in lowercase letters only (in this situation).
 
-There should be ten (10) results of column names from the users table. However, you only care about seven (7) of them (see Note). Select the up and down arrows on the Firefox Find toolbar to move between the results to view them all.
+29. Close the Firefox find toolbar by selecting the X at the far-right end of the toolbar. Then, scroll to the top of the page (or press CTRL+HOME on your keyboard).
 
-There are some results you can ignore, as they are not actual columns of the users table but are related to the operations and communications with the users table. These results will all be capitalized. They are: USERS, CURRENT_CONNECTIONS, and TOTAL_CONNECTIONS. (You could also see MAX_SESSION_CONTROLLED_MEMORY and MAX_SESSION_TOTAL_MEMORY,. but these are not useful in this context either). The actual users table column names will be listed in lowercase letters only (in this situation).
+30. With knowledge of the available columns in a table, you can now attempt to retrieve the data from those columns. So, you decide to pull user names and passwords from the users table. Type the following command into the User ID: field, then select Submit:
 
-Which of the following are column names from the users table of the dvwa database? (Select seven (7) column names)
+  ' UNION SELECT user, password FROM users#
+31. The results should be a presentation of all user accounts' usernames in the "First name:" field and the corresponding password hashes in the "Surname:" field.
 
-failed_login
-last_login
-first_name
-last_name
-name
-user_id
-password
-comment
-avatar
-USER
-Close the Firefox find toolbar by selecting the X at the far-right end of the toolbar. Then, scroll to the top of the page (or press CTRL+HOME on your keyboard).
+  - At this point, you could export the enumerated password hashes to a file. Then use a password cracker to attempt to discover the passwords.
 
-With knowledge of the available columns in a table, you can now attempt to retrieve the data from those columns. So, you decide to pull user names and passwords from the users table. Type the following command into the User ID: field, then select Submit:
+ As you can see, SQLi attacks can become quite complex and tedious very easily. And the elegance of the output is dependent upon the injected command. You can retrieve data in a raw dump that is hard to understand or you can format the output to your preferences.
 
-' UNION SELECT user, password FROM users#
-The results should be a presentation of all user accounts' usernames in the "First name:" field and the corresponding password hashes in the "Surname:" field.
+ At this point, you have performed some basic SQLi attacks against the DVWA. In the next exercise, you will investigate the website's logs for evidence and IoCs of SQLi.
 
-At this point, you could export the enumerated password hashes to a file. Then use a password cracker to attempt to discover the passwords.
+#### Check your work
 
-As you can see, SQLi attacks can become quite complex and tedious very easily. And the elegance of the output is dependent upon the injected command. You can retrieve data in a raw dump that is hard to understand or you can format the output to your preferences.
-
-At this point, you have performed some basic SQLi attacks against the DVWA. In the next exercise, you will investigate the website's logs for evidence and IoCs of SQLi.
-
-Check your work
 Confirm that you tested the target website to determine that it was vulnerable to SQLi.
+
 Confirm that you used Boolean logic to trick the database into revealing all users.
+
 Confirm that you determined the DBMA version.
+
 Confirm that you elicited the name of the DBMA and the names of tables.
+
 Confirm that you extracted the names of columns from a table.
+
 Confirm that you received all information from all columns of a table.
+
 Confirm that you altered the presentation of retrieved data with more complex SQLi statements.
 
 ### Investigate SQLi
 
 You have received a report that several users claim that they think their accounts' passwords have been compromised. There is also a report of a data dump on a hacker discussion forum containing several users' personal information. You are tasked with investigating the issue. You suspect that the website was the target of a SQLi attack. In this exercise, you will investigate the log of the company's website to see if you can find evidence or IoCs of SQLi.
 
-Connect to the LAMP virtual machine and sign in as lamp using Pa$$w0rd as the password.
+1. Connect to the LAMP virtual machine and sign in as lamp using Pa$$w0rd as the password.
 
-Elevate to use root privileges by entering: sudo su and then entering Pa$$w0rd as the password.
+2. Elevate to use root privileges by entering: sudo su and then entering Pa$$w0rd as the password.
 
-Enter cd /var/log/apache2 to change into the apache2 log directory.
+3. Enter cd /var/log/apache2 to change into the apache2 log directory.
 
-Enter ls -l to view the log filenames, sizes, and timestamps.
+4. Enter ls -l to view the log filenames, sizes, and timestamps.
 
-Enter less access.log to view the website's access.log. Look over the log for anything interesting.
+5. Enter less access.log to view the website's access.log. Look over the log for anything interesting.
 
-When using the less file viewing utility, press the spacebar to view the next page. You can return to a previous page using b or scroll one line up or down utilizing the arrow keys.
+  - When using the less file viewing utility, press the spacebar to view the next page. You can return to a previous page using b or scroll one line up or down utilizing the arrow keys.
 
-The first line of the access.log file is: /dev/null
+  - The first line of the access.log file is: /dev/null
 
-You need to 'ignore' the directory path element of "/vulnerabilities/sqli/" as this is the obvious name of the HTML document on the DVWA (Damn Vulnerable Web Application) that is designed to demonstrate SQLi. In a real-world situation, you will not see the term "SQLi" in the logs. SQLi attacks are usually more subtle than that.
+  - You need to 'ignore' the directory path element of "/vulnerabilities/sqli/" as this is the obvious name of the HTML document on the DVWA (Damn Vulnerable Web Application) that is designed to demonstrate SQLi. In a real-world situation, you will not see the term "SQLi" in the logs. SQLi attacks are usually more subtle than that.
 
-The Apache web server access log has two default log formats. The Common Log Format includes the following seven default fields:
+  - The Apache web server access log has two default log formats. The Common Log Format includes the following seven default fields:
+   1. IP address of the client
+   2. The identity of the client, but typically presented as only a hyphen (i.e., - )
+   3. User ID of requesting user, but will be a hyphen when there is no established user context
+   4. Date and time of the request (in square brackets)
+   5. The HTTP request type (i.e., GET, POST, etc.) and the resource being requested
+   6. The HTTP response status code
+   7. The size of the object returned to the client
+ The Combined Log Format includes the following two additional fields:
 
-IP address of the client
-The identity of the client, but typically presented as only a hyphen (i.e., - )
-User ID of requesting user, but will be a hyphen when there is no established user context
-Date and time of the request (in square brackets)
-The HTTP request type (i.e., GET, POST, etc.) and the resource being requested
-The HTTP response status code
-The size of the object returned to the client
-The Combined Log Format includes the following two additional fields:
+   8. The HTTP referrer (i.e., the address from which the request for the resource originated.)
+   9. The User Agent of the client, which identifies information about the browser that the client is using to access the resource.
+ It is also possible to customize the fields of the Apache logs.
 
-The HTTP referrer (i.e., the address from which the request for the resource originated.)
-The User Agent of the client, which identifies information about the browser that the client is using to access the resource.
-It is also possible to customize the fields of the Apache logs.
+ In this exercise, Apache is configured to use the Combined Log Format. Note: The User ID is a hyphen in the access.log for this exercise because when using the DVWA as the target, while you must log in as admin to access the vulnerable applications of the demo service, you are not using a user account or active login on most of the demonstration sub-pages.
 
-In this exercise, Apache is configured to use the Combined Log Format. Note: The User ID is a hyphen in the access.log for this exercise because when using the DVWA as the target, while you must log in as admin to access the vulnerable applications of the demo service, you are not using a user account or active login on most of the demonstration sub-pages.
+6. Starting from the top of the access.log file (i.e., the oldest entry in the log), look down through the entries to find the one with the following as its HTTP request:
 
-...less
-Starting from the top of the access.log file (i.e., the oldest entry in the log), look down through the entries to find the one with the following as its HTTP request:
+ "GET /vulnerabilities/sqli/?id=1&Submit=Submit# HTTP/1.1"
+ This was your first submission to the SQLi page of just the number '1'. On its own, this is a record that could be benign or an element of reconnaissance.
 
-"GET /vulnerabilities/sqli/?id=1&Submit=Submit# HTTP/1.1"
-This was your first submission to the SQLi page of just the number '1'. On its own, this is a record that could be benign or an element of reconnaissance.
+7. Look at the referrer value for this log record.
 
-Look at the referrer value for this log record.
+  - The HTTP referrer indicates the URL of the page which was displayed in the browser of the user, which is the context from which the next URL is requested (i.e., the HTTP request). This record's HTTP request was submitted to the web server from the 'home' page of the SQLi site.
 
-What is the HTTP referrer for this log record related to your first submission to the SQLi page of just the number '1'?
+8. Look further down, maybe only a single record, to find the submission of the number '7'. The HTTP request should be:
 
-"GET /vulnerabilities/sqli/?id=7&Submit=Sumbit# HTTP/1.1"
-"GET /vulnerabilities/sqli/"
-"GET /vulnerabilities/sqli/?id=1&Submit=Sumbit# HTTP/1.1"
-"GET /vulnerabilities/xss_r/ HTTP/1.1"
-The HTTP referrer indicates the URL of the page which was displayed in the browser of the user, which is the context from which the next URL is requested (i.e., the HTTP request). This record's HTTP request was submitted to the web server from the 'home' page of the SQLi site.
+ "GET /vulnerabilities/sqli/?id=7&Submit=Submit# HTTP/1.1"
+ This was your next submission to the SQLi page of just the number '7'. On its own, this is also a record that could be benign or an element of reconnaissance. However, it begins to show a pattern of probing that could be considered SQLi pre-attack reconnaissance.
 
-Look further down, maybe only a single record, to find the submission of the number '7'. The HTTP request should be:
+  - Notice that this record's referrer is the prior page which was the result of submitting the number '1'. For each remaining log record you look at, you should see this progression (i.e., the current HTTP request's log record will have the prior page as the referrer). While it is possible to backtrack to an initial page before each SQLi submission, it is not that common. Because typically, the attacker needs information from the results of a SQLi query to craft the next SQLi command.
 
-"GET /vulnerabilities/sqli/?id=7&Submit=Submit# HTTP/1.1"
-This was your next submission to the SQLi page of just the number '7'. On its own, this is also a record that could be benign or an element of reconnaissance. However, it begins to show a pattern of probing that could be considered SQLi pre-attack reconnaissance.
+9. The next log record should include the submission of a single quote. However, the log will not retain metacharacters. Instead, they will be converted to percent-encoded values. It is also possible that the SQLi statements will include pre-encoded percent encodings of metacharacters to avoid filters.
 
-Notice that this record's referrer is the prior page which was the result of submitting the number '1'. For each remaining log record you look at, you should see this progression (i.e., the current HTTP request's log record will have the prior page as the referrer). While it is possible to backtrack to an initial page before each SQLi submission, it is not that common. Because typically, the attacker needs information from the results of a SQLi query to craft the next SQLi command.
-
-The next log record should include the submission of a single quote. However, the log will not retain metacharacters. Instead, they will be converted to percent-encoded values. It is also possible that the SQLi statements will include pre-encoded percent encodings of metacharacters to avoid filters.
-
-You may need to consult a reference table to determine the characters being obfuscated by the log. Some recognition of percent encoding will be necessary in order to interpret website log entries. Here is a partial reference table of commonly used percent encodings related to SQLi:
+  - You may need to consult a reference table to determine the characters being obfuscated by the log. Some recognition of percent encoding will be necessary in order to interpret website log entries. Here is a partial reference table of commonly used percent encodings related to SQLi:
 
 Encoding	Value
 %20	(space)
@@ -278,63 +260,45 @@ Encoding	Value
 %40	@
 %5C	\
  	 
-When dealing with hex values, such as those used in percent encoding, the case of the hex letter is irrelevant. They can be lowercase or uppercase without issue. Thus, %3c and %3C are the same when they are resolved into the < character.
+  - When dealing with hex values, such as those used in percent encoding, the case of the hex letter is irrelevant. They can be lowercase or uppercase without issue. Thus, %3c and %3C are the same when they are resolved into the < character.
 
-What is the percent-encoding for a single quotation mark?
+10. The next log record should contain the SQLi code of the following:
 
-%3e
-%21
-%3a
-%27
-The next log record should contain the SQLi code of the following:
+ 1' or '1'='1 
+ This input will be encoded in the access log as:
 
-1' or '1'='1 
-This input will be encoded in the access log as:
+ 1%27+or+%271%27%3D%271 
+ The record will have a full HTTP request of:
 
-1%27+or+%271%27%3D%271 
-The record will have a full HTTP request of:
+ "GET /vulnerabilities/sqli/?id=1%27+or+%271%27%3D%271&Submit=Submit#  HTTP/1.1"
+ This is the first clear evidence of IoC of a SQLi statement. This is the injection of a logical operation that is intended to confuse the server-side script. In this instance, this injection string was submitted to a page to retrieve user information related to a User ID. As you recall, the result of this injection was a dump of all of the user accounts on the system.
 
-"GET /vulnerabilities/sqli/?id=1%27+or+%271%27%3D%271&Submit=Submit#  HTTP/1.1"
-This is the first clear evidence of IoC of a SQLi statement. This is the injection of a logical operation that is intended to confuse the server-side script. In this instance, this injection string was submitted to a page to retrieve user information related to a User ID. As you recall, the result of this injection was a dump of all of the user accounts on the system.
+11. Next in the log, locate a record with the HTTP request of the following:
 
-What could be found in a website's access log as a representation of a space in an HTTP request? (Select 2)
+ "GET /vulnerabilities/sqli/?id=%27+ORDER+BY+1%23&Submit=Submit#  HTTP/1.1"
+ This is the first of three queries to determine the column query limit. This is another IoC observable that a SQLi attack is occurring.
 
-%20
-%22
-%3c
-+ (a plus sign)
-Next in the log, locate a record with the HTTP request of the following:
+12. Next in the log, locate a record with the HTTP request of the following:
 
-"GET /vulnerabilities/sqli/?id=%27+ORDER+BY+1%23&Submit=Submit#  HTTP/1.1"
-This is the first of three queries to determine the column query limit. This is another IoC observable that a SQLi attack is occurring.
+ "GET /vulnerabilities/sqli/?id=%27+UNION+SELECT+@40%40version%2C+NULL%23&Submit=Submit#  HTTP/1.1"
+ This is a SQLi statement used to determine the version of the DBMS running behind the web server. This is absolutely evidence of reconnaissance before initiating further SQLi attacks.
 
-Next in the log, locate a record with the HTTP request of the following:
+13. Next in the log, locate a record with the HTTP request of the following:
 
-"GET /vulnerabilities/sqli/?id=%27+UNION+SELECT+@40%40version%2C+NULL%23&Submit=Submit#  HTTP/1.1"
-This is a SQLi statement used to determine the version of the DBMS running behind the web server. This is absolutely evidence of reconnaissance before initiating further SQLi attacks.
+ "GET /vulnerabilities/sqli/?id=%27+UNION+SELECT+table_schema%2C+table_name+FROM+information_schema.tables%23&Submit=Submit#  HTTP/1.1"
+ This is a SQLi statement used to extract all of the table names from the default DMBS database information container of MySQL (i.e., information_schema.tables). This is how an attacker learns the names of all of the tables hosted by a website's DBMS.
 
-Why is the octothorpe after the 'NULL' parameter used in this submitted SQLi statement?
+14. Next in the log, locate a record with the HTTP request of the following:
 
-carriage return and line feed
-to append the command to the existing script statement
-end-of-line comment
-retrieve certain records from one or more tables.
-Next in the log, locate a record with the HTTP request of the following:
+ "GET /vulnerabilities/sqli/?id=%27+UNION+SELECT+table_name%2C+column_name+FROM+information_schema.columns%23&Submit=Submit#  HTTP/1.1"
+ This is a SQLi statement used to extract all of the column names from all of the tables from the default DMBS database information container of MySQL (i.e., information_schema.tables). This is how an attacker learns the names of all of the columns within each table hosted by a website's DBMS.
 
-"GET /vulnerabilities/sqli/?id=%27+UNION+SELECT+table_schema%2C+table_name+FROM+information_schema.tables%23&Submit=Submit#  HTTP/1.1"
-This is a SQLi statement used to extract all of the table names from the default DMBS database information container of MySQL (i.e., information_schema.tables). This is how an attacker learns the names of all of the tables hosted by a website's DBMS.
+15. Next in the log, locate a record with the HTTP request of the following:
 
-Next in the log, locate a record with the HTTP request of the following:
+ "GET /vulnerabilities/sqli/?id=%27+UNION+SELECT+user%2C+password+FROM+users%23&Submit=Submit#  HTTP/1.1"
+ This is a SQLi statement used to extract the columns of user and password from the users table. This is how an attacker is able to exfiltrate the password hashes of users. Once the attacker obtains the password hashes, they can initiate password cracking and potentially discover user passwords. In this exercise's scenario, this could be the means by which the attackers were able to take control of users' accounts.
 
-"GET /vulnerabilities/sqli/?id=%27+UNION+SELECT+table_name%2C+column_name+FROM+information_schema.columns%23&Submit=Submit#  HTTP/1.1"
-This is a SQLi statement used to extract all of the column names from all of the tables from the default DMBS database information container of MySQL (i.e., information_schema.tables). This is how an attacker learns the names of all of the columns within each table hosted by a website's DBMS.
-
-Next in the log, locate a record with the HTTP request of the following:
-
-"GET /vulnerabilities/sqli/?id=%27+UNION+SELECT+user%2C+password+FROM+users%23&Submit=Submit#  HTTP/1.1"
-This is a SQLi statement used to extract the columns of user and password from the users table. This is how an attacker is able to exfiltrate the password hashes of users. Once the attacker obtains the password hashes, they can initiate password cracking and potentially discover user passwords. In this exercise's scenario, this could be the means by which the attackers were able to take control of users' accounts.
-
-The primary IoC for SQLi is the use of SQL expressions. If you see any of the following terms in an HTTP request, then there is a high likelihood that SQLi is taking place. The following is a partial table of common SQL commands used in SQLi statements:
+  - The primary IoC for SQLi is the use of SQL expressions. If you see any of the following terms in an HTTP request, then there is a high likelihood that SQLi is taking place. The following is a partial table of common SQL commands used in SQLi statements:
 
 SQL Expression	Description
 ORDER BY	Sort data in ascending or descending order.
@@ -344,17 +308,25 @@ UPDATE	Modify records.
 INSERT	Create a record.
 DELETE	Delete a record.
 DROP	Delete an entire table, a view of a table, or other objects in the database.
-...less
-When finished looking over the access.log, type q to exit the less viewer.
+
+16. When finished looking over the access.log, type q to exit the less viewer.
 
 With the evidence you have discovered from the access.log, you have clearly discovered IoCs of SQLi.
 
-Check your work
+#### Check your work
+
 Confirm that you analyzed the Apache access.log file for evidence and IoCs related to SQLi
+
 Confirm that you discovered evidence of SQLi related to vulnerability testing.
+
 Confirm that you discovered evidence of SQLi related to user account enumeration.
+
 Confirm that you discovered evidence of SQLi related to determining the column query limit.
+
 Confirm that you discovered evidence of SQLi related to disclosing the DBMS version information.
+
 Confirm that you discovered evidence of SQLi related to extracting table names.
+
 Confirm that you discovered evidence of SQLi related to extracting column names.
+
 Confirm that you discovered evidence of SQLi related to exfiltrating user names and password hashes.
