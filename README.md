@@ -33,108 +33,98 @@ In this exercise, you will be acting like an attacker. First, you will probe a t
 
 This exercise uses the DVWA as the target of several database exploitations. However, you must first log into DVWA to access the various challenges. The DVWA has four difficulty levels (Low, Medium, High, and Impossible) and is set to the Low level by default.
 
-DVWA or Damn Vulnerable Web Application is a safe and legal security playground that security professionals can use to improve their skills and learn tools and techniques related to web attacks and exploitations. DVWA is designed to be installed into a private (i.e., non-Internet) lab environment for internal use. Do NOT install DVWA on a production or an Internet-accessible system.
+ - DVWA or Damn Vulnerable Web Application is a safe and legal security playground that security professionals can use to improve their skills and learn tools and techniques related to web attacks and exploitations. DVWA is designed to be installed into a private (i.e., non-Internet) lab environment for internal use. Do NOT install DVWA on a production or an Internet-accessible system.
 
-Connect to the KALI and sign in as root using Pa$$w0rd as the password.
+1. Connect to the KALI and sign in as root using Pa$$w0rd as the password.
 
-Open Firefox, then in the address field of Firefox, enter dvwa.structureality.com.
+2. Open Firefox, then in the address field of Firefox, enter dvwa.structureality.com.
 
-If an error of Unable to connect is displayed, wait 30 seconds, then refresh the page. The LAMP VM may not have fully booted before you attempted to access the website.
+  - If an error of Unable to connect is displayed, wait 30 seconds, then refresh the page. The LAMP VM may not have fully booted before you attempted to access the website.
 
-If you see the DVWA login page, type admin and password into the Username and Password fields, respectively, then select Login.
+  - If you see the DVWA login page, type admin and password into the Username and Password fields, respectively, then select Login.
 
-The Welcome to Dann Vulnerable Web Application! page should be displayed.
+3. The Welcome to Dann Vulnerable Web Application! page should be displayed.
 
-If you scroll to the bottom of any DVWA page, you will see a footer that indicates several values, including the security level. To change the security level, select DVWA Security from the left-side navigation menu bar, make a selection from the pull-down list, then select Submit. This lab assumes the default security level of Low.
+  - If you scroll to the bottom of any DVWA page, you will see a footer that indicates several values, including the security level. To change the security level, select DVWA Security from the left-side navigation menu bar, make a selection from the pull-down list, then select Submit. This lab assumes the default security level of Low.
 
-In the left-side navigation menu bar, select SQL Injection.
+4. In the left-side navigation menu bar, select SQL Injection.
 
-The Vulnerability: SQL Injection page should be displayed.
+ The Vulnerability: SQL Injection page should be displayed.
 
-Type 1 into the User ID: field, then select Submit.
+5. Type 1 into the User ID: field, then select Submit.
 
-The results should confirm that the User ID of 1 is the admin. Notice that the URL has changed to include parameters. It should look like the following:
+6. The results should confirm that the User ID of 1 is the admin. Notice that the URL has changed to include parameters. It should look like the following:
 
-dvwa.structureality.com/vulnerabilities/sqli/?id=1&Submit=Submit#
-The URL displayed after a form field submission often reveals details about the variables used in the server-side script. In a real-world situation, you would use this information to predict how the code is crafted and work towards discovering SQL statements that will enable you to perform arbitrary commands against the database or its underlying OS. In this DVWA simulation, you could select the View Source button at the bottom of the page to see the actual code in use on the server. Knowing the server script code is immensely helpful in discovering vulnerabilities to take advantage of.
+  - dvwa.structureality.com/vulnerabilities/sqli/?id=1&Submit=Submit#
+  - The URL displayed after a form field submission often reveals details about the variables used in the server-side script. In a real-world situation, you would use this information to predict how the code is crafted and work towards discovering SQL statements that will enable you to perform arbitrary commands against the database or its underlying OS. In this DVWA simulation, you could select the View Source button at the bottom of the page to see the actual code in use on the server. Knowing the server script code is immensely helpful in discovering vulnerabilities to take advantage of.
 
-...less
-Type 7 into the User ID: field, then select Submit.
+7. Type 7 into the User ID: field, then select Submit.
 
-There should be no result -- not even an error message stating that the User ID doesn't exist in the database.
+8. There should be no result -- not even an error message stating that the User ID doesn't exist in the database.
 
-You could experiment and try the numbers 2-6 to see if you can discover other existing user accounts and determine how many user accounts are present on the target system.
+  - You could experiment and try the numbers 2-6 to see if you can discover other existing user accounts and determine how many user accounts are present on the target system.
 
-Type in a single quote character (i.e., ') into the User ID: field, then select Submit.
+9. Type in a single quote character (i.e., ') into the User ID: field, then select Submit.
 
-This is a common test to determine if a website is filtering metacharacters. Most SQLi attacks use the apostrophe or single quote.
+  - This is a common test to determine if a website is filtering metacharacters. Most SQLi attacks use the apostrophe or single quote.
 
-This should return an error message stating:
+10. This should return an error message stating:
 
-"You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''''' at line 1"
+ "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''''' at line 1"
 
-Because of this error, you now know that the website is not filtering metacharacters and is, therefore, vulnerable to SQLi. You also know that the DBMS is MySQL.
+ Because of this error, you now know that the website is not filtering metacharacters and is, therefore, vulnerable to SQLi. You also know that the DBMS is MySQL.
 
-The end of that error message statement will then show a series of five single quotes. This error message attempts to show you the syntax error in quotes. However, since the error is the occurrence of an odd number of quotes (i.e., you are causing the User ID string assignment to be three quotes instead of a number within quotes), the problem is the presence of three quotes (i.e., ''') which is then itself presented inside of single quotes.
+  - The end of that error message statement will then show a series of five single quotes. This error message attempts to show you the syntax error in quotes. However, since the error is the occurrence of an odd number of quotes (i.e., you are causing the User ID string assignment to be three quotes instead of a number within quotes), the problem is the presence of three quotes (i.e., ''') which is then itself presented inside of single quotes.
 
-Discovering information from error messages is known as error-based SQLi. Whether you happen across error messages or inject statements that cause specific error messages to be displayed purposely is an effective means of gathering information to further your efforts in SQLi attacks.
+  - Discovering information from error messages is known as error-based SQLi. Whether you happen across error messages or inject statements that cause specific error messages to be displayed purposely is an effective means of gathering information to further your efforts in SQLi attacks.
 
-Select the back button on the Firefox toolbar to return to the Vulnerability: SQL Injection page.
+11. Select the back button on the Firefox toolbar to return to the Vulnerability: SQL Injection page.
 
-Test to see if you can exploit the server script through Boolean logic. Type the following into the User ID: field, and then select Submit.
+12. Test to see if you can exploit the server script through Boolean logic. Type the following into the User ID: field, and then select Submit.
 
-1' or '1'='1
-This is a typical initial SQLi method that uses logic to trick the target into revealing more information than its programmers intended. The concept is, you are setting up an OR expression between a variable condition (i.e., whether a User ID exists) and a tautology (i.e., a statement of truth (e.g., 1=1)). The results of this statement will always be true regardless of whether the variable condition is true. This results in a lack of context for the remainder of the script, which instead of returning a single entry as intended, the script may return all entries.
+  - 1' or '1'='1
+  - This is a typical initial SQLi method that uses logic to trick the target into revealing more information than its programmers intended. The concept is, you are setting up an OR expression between a variable condition (i.e., whether a User ID exists) and a tautology (i.e., a statement of truth (e.g., 1=1)). The results of this statement will always be true regardless of whether the variable condition is true. This results in a lack of context for the remainder of the script, which instead of returning a single entry as intended, the script may return all entries.
 
-If you make a mistake in typing any of the SQLi statements and receive an error instead of the expected result, then use the back arrow on the Firefox toolbar to return to the Vulnerability: SQL Injection page and try again. Any mistakes you make will be reflected in the DVWA website access log on the LAMP host. You will see all of your submitted or injected values during the investigate SQLi exercise.
+  - If you make a mistake in typing any of the SQLi statements and receive an error instead of the expected result, then use the back arrow on the Firefox toolbar to return to the Vulnerability: SQL Injection page and try again. Any mistakes you make will be reflected in the DVWA website access log on the LAMP host. You will see all of your submitted or injected values during the investigate SQLi exercise.
 
-The result of this submission should be a presentation of all five user accounts on this website.
+13. The result of this submission should be a presentation of all five user accounts on this website.
 
-What user account name is not present in this SQLi result?
+14. A common next step is to determine the column query limit. You must know the column query limit to abuse it. This will require trial and error to determine. Enter the following into the User ID: field, then select Submit.
 
-Morgan
-admin
-Bob
-Gordon
-Pablo
-Hack
-A common next step is to determine the column query limit. You must know the column query limit to abuse it. This will require trial and error to determine. Enter the following into the User ID: field, then select Submit.
+  - ' ORDER BY 1#
+  - Most SQL injection statements start with a single quote (i.e., '). This initial single quote is used to terminate the string (i.e., whatever data is normally typed into the input field) assignment to a variable in the script on the web server. This means whatever follows that initial single quote will be perceived by the web server as code instead of string input. Be sure you are typing in the leading single quote, then a space, then the "ORDER BY…" statement.
 
-' ORDER BY 1#
-Most SQL injection statements start with a single quote (i.e., '). This initial single quote is used to terminate the string (i.e., whatever data is normally typed into the input field) assignment to a variable in the script on the web server. This means whatever follows that initial single quote will be perceived by the web server as code instead of string input. Be sure you are typing in the leading single quote, then a space, then the "ORDER BY…" statement.
+  - The final octothorp (i.e., #) is used here as the end-of-line comment function for this MySQL target (you discovered the identity of this DBMS from the error message earlier). There are variations of SQL syntax between some DBMSes. For example, some DBMSes use double-dash (i.e., --) for this purpose.
 
-The final octothorp (i.e., #) is used here as the end-of-line comment function for this MySQL target (you discovered the identity of this DBMS from the error message earlier). There are variations of SQL syntax between some DBMSes. For example, some DBMSes use double-dash (i.e., --) for this purpose.
+  - In many instances, you are limited as to the amount of data (i.e., number of columns) you can retrieve through a SQLi based on what the script is already programmed to do. So, you need to determine the number of columns retrieved from the table. While you may be able to guess this based on the results seen when you provided valid input, it may be the case that more values are being retrieved by the script than what is being displayed on the resulting web page.
 
-In many instances, you are limited as to the amount of data (i.e., number of columns) you can retrieve through a SQLi based on what the script is already programmed to do. So, you need to determine the number of columns retrieved from the table. While you may be able to guess this based on the results seen when you provided valid input, it may be the case that more values are being retrieved by the script than what is being displayed on the resulting web page.
+15. This should have no results. So, increment the number and try again.
 
-...less
-This should have no results. So, increment the number and try again.
+16. Enter the following into the User ID: field, then select Submit.
 
-Enter the following into the User ID: field, then select Submit.
+  - ' ORDER BY 2#
+  - The SQL expressions used in SQLi do not need to be entered in all capital letters, but it is a common practice to do so anyway. This helps to differentiate the SQL expressions from the various object names or other command logic used in the longer and more complex SQLi statements. The SQL expressions commonly used in SQLi include ORDER BY, UNION, SELECT, UPDATE, INSERT, DELETE, and DROP. However, only some of these expressions will be used in this exercise.
 
-' ORDER BY 2#
-The SQL expressions used in SQLi do not need to be entered in all capital letters, but it is a common practice to do so anyway. This helps to differentiate the SQL expressions from the various object names or other command logic used in the longer and more complex SQLi statements. The SQL expressions commonly used in SQLi include ORDER BY, UNION, SELECT, UPDATE, INSERT, DELETE, and DROP. However, only some of these expressions will be used in this exercise.
+17. This should have no results. So, increment the number and try again.
 
-...less
-This should have no results. So, increment the number and try again.
+18. Enter the following into the User ID: field, then select Submit.
 
-Enter the following into the User ID: field, then select Submit.
+  - ' ORDER BY 3#
 
-' ORDER BY 3#
-This should result in an error message of "Unknown column '3' in 'order clause'". This indicates that the table has two (2) columns.
+19. This should result in an error message of "Unknown column '3' in 'order clause'". This indicates that the table has two (2) columns.
 
-With knowledge of the column limitation, you can now attempt to pull other data from the DBMS. To craft more advanced SQL injection queries, you need to know the name of the database and the name of the tables. Since the target's DBMS is a MySQL variant, you can use knowledge of standard MySQL elements to access more data.
+ With knowledge of the column limitation, you can now attempt to pull other data from the DBMS. To craft more advanced SQL injection queries, you need to know the name of the database and the name of the tables. Since the target's DBMS is a MySQL variant, you can use knowledge of standard MySQL elements to access more data.
 
-Rather than assume you know everything about MySQL already, you are provided with several facts about default MySQL installations and the use of SQL expressions in the following steps.
+  - Rather than assume you know everything about MySQL already, you are provided with several facts about default MySQL installations and the use of SQL expressions in the following steps.
 
-Select the back button to return to the Vulnerability: SQL Injection page.
+20. Select the back button to return to the Vulnerability: SQL Injection page.
 
-Confirm the DMBS version by typing the following command into the User ID: field, then select Submit:
+21. Confirm the DMBS version by typing the following command into the User ID: field, then select Submit:
 
-' UNION SELECT @@version, NULL# 
-Some website configurations may block the display of error messages, especially those that would reveal DBMS configuration details. So knowing how to elicit the DBMS version is often helpful.
+    ' UNION SELECT @@version, NULL# 
+  - Some website configurations may block the display of error messages, especially those that would reveal DBMS configuration details. So knowing how to elicit the DBMS version is often helpful.
 
-The UNION SQL expression combines the operation of two or more SELECT expression statements. It is often used in SQLi to add an injected set of instructions to whatever the targeted system's script would have executed in normal conditions.
+  - The UNION SQL expression combines the operation of two or more SELECT expression statements. It is often used in SQLi to add an injected set of instructions to whatever the targeted system's script would have executed in normal conditions.
 
 "NULL" is used as a placeholder in the second value position of the query.
 
