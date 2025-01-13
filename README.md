@@ -102,7 +102,7 @@ This exercise uses the DVWA as the target of several database exploitations. How
 
 16. Enter the following into the User ID: field, then select Submit.
 
-  - ' ORDER BY 2#
+  ' ORDER BY 2#
   - The SQL expressions used in SQLi do not need to be entered in all capital letters, but it is a common practice to do so anyway. This helps to differentiate the SQL expressions from the various object names or other command logic used in the longer and more complex SQLi statements. The SQL expressions commonly used in SQLi include ORDER BY, UNION, SELECT, UPDATE, INSERT, DELETE, and DROP. However, only some of these expressions will be used in this exercise.
 
 17. This should have no results. So, increment the number and try again.
