@@ -30,278 +30,247 @@ This activity is designed to test your understanding of and ability to apply con
 
 While evaluating a system to improve security, you may discover that there are unwanted device drivers present. Knowing how to remove those devices and/or device drivers is an important part of system hardening. In this exercise, you will scan for hardware changes, update a driver, disable and re-enable a device, remove a device driver, and install a device driver.
 
-The activities in this exercise demonstrate the functions of device and driver management. You would need to apply these processes properly and effectively in your own environment. For example, when removing a device causing poor system performance or introducing an exploitable vulnerability.
+  - The activities in this exercise demonstrate the functions of device and driver management. You would need to apply these processes properly and effectively in your own environment. For example, when removing a device causing poor system performance or introducing an exploitable vulnerability.
 
-The concept of system hardening is focused on two operations: remove and update. One task of hardening is to remove anything that is not needed for a business activity. The other hardening task is to update and secure anything that is needed for a business activity. However, the reality is that you can't typically perform these two functions in the simple order of remove and then update with the result of actually having a properly hardened system. Sometimes you must update first, then remove, then repeat updating, then repeat removing. It can take several iterations of updating and removal to achieve the targeted hardened system result. Thus, hardening is often a more complex process than it might first seem.
+  - The concept of system hardening is focused on two operations: remove and update. One task of hardening is to remove anything that is not needed for a business activity. The other hardening task is to update and secure anything that is needed for a business activity. However, the reality is that you can't typically perform these two functions in the simple order of remove and then update with the result of actually having a properly hardened system. Sometimes you must update first, then remove, then repeat updating, then repeat removing. It can take several iterations of updating and removal to achieve the targeted hardened system result. Thus, hardening is often a more complex process than it might first seem.
 
-...less
-Select the MS10 VM. Send Ctrl+Alt+Delete and, if needed, sign in as Jaime using Pa$$w0rd as the password.
+1. Select the MS10 VM. Send Ctrl+Alt+Delete and, if needed, sign in as Jaime using Pa$$w0rd as the password.
 
-Jaime is a member of the Domain Admins group. So, this user account is an administrator on the MS10 system.
+    - Jaime is a member of the Domain Admins group. So, this user account is an administrator on the MS10 system.
 
-Minimize or close Server Manager if it appears. It will not be used in this lab.
+2. Minimize or close Server Manager if it appears. It will not be used in this lab.
 
-Open Device Manager and scan for hardware changes.
+3. Open Device Manager and scan for hardware changes.
 
-Expand this hint for guidance.
-Select Type here to search from the taskbar, type device manager, then select Device Manager from the results.
+  Expand this hint for guidance.
+    a. Select Type here to search from the taskbar, type device manager, then select Device Manager from the results.
 
-Right-click over any device category, then select Scan for hardware changes from the pop-up menu.
+    b. Right-click over any device category, then select Scan for hardware changes from the pop-up menu.
 
-A window may appear, indicating a scan is taking place. If it does appear, once completed, any newly discovered hardware will have its drivers automatically installed.
+    c. A window may appear, indicating a scan is taking place. If it does appear, once completed, any newly discovered hardware will have its drivers automatically installed.
 
-Update the device driver for the Microsoft Virtual DVD-ROM under DVD/CD-ROM drives.
+4. Update the device driver for the Microsoft Virtual DVD-ROM under DVD/CD-ROM drives.
 
-Expand this hint for guidance.
-The Device Manager should still be open.
+  Expand this hint for guidance.
+    a. The Device Manager should still be open.
 
-Select the arrow to expand DVD/CD-ROM drives.
+    b. Select the arrow to expand DVD/CD-ROM drives.
 
-Right-click Microsoft Virtual DVD-ROM, then select Update Driver Software….
+    c. Right-click Microsoft Virtual DVD-ROM, then select Update Driver Software….
 
-The Update Drivers window is displayed.
+    d. The Update Drivers window is displayed.
 
-Select Search automatically for updated driver software.
+    e. Select Search automatically for updated driver software.
 
-The utility will then search locally for new drivers.
+    f. The utility will then search locally for new drivers.
 
-If this system had Internet access, the search for new device drivers would also include the Windows Update server.
+    - If this system had Internet access, the search for new device drivers would also include the Windows Update server.
 
-You should see a result that states The best driver software for your device is already installed.
+    g. You should see a result that states The best driver software for your device is already installed.
 
-Select Close.
+    h. Select Close.
 
-Disable then enable the Microsoft Virtual DVD-ROM.
+5. Disable then enable the Microsoft Virtual DVD-ROM.
 
-Expand this hint for guidance.
-The Device Manager should still be open.
+  Expand this hint for guidance.
+    a. The Device Manager should still be open.
 
-If needed, select the arrow to expand DVD/CD-ROM drives.
+    b. If needed, select the arrow to expand DVD/CD-ROM drives.
 
-Right-click Microsoft Virtual DVD-ROM, then select Disable.
+    c. Right-click Microsoft Virtual DVD-ROM, then select Disable.
 
-On the Microsoft Virtual DVD-ROM pop-up window, select Yes to disable the device.
+    d. On the Microsoft Virtual DVD-ROM pop-up window, select Yes to disable the device.
 
-The device is now disabled. The icon for the device will now have a small circle with an arrow pointing down.
+    e. The device is now disabled. The icon for the device will now have a small circle with an arrow pointing down.
 
-Right-click the disabled device of Microsoft Virtual DVD-ROM, then select Enable
+    f. Right-click the disabled device of Microsoft Virtual DVD-ROM, then select Enable
 
-The Device Manager display will refresh and now display the DVD-ROM drive as enabled again.
+    g. The Device Manager display will refresh and now display the DVD-ROM drive as enabled again.
 
-Disabling and enabling a device is often used as a troubleshooting step to see if this process will cause a device to begin functioning correctly.
+    - Disabling and enabling a device is often used as a troubleshooting step to see if this process will cause a device to begin functioning correctly.
 
-Uninstall, then reinstall the Microsoft Virtual DVD-ROM.
+6. Uninstall, then reinstall the Microsoft Virtual DVD-ROM.
 
-Expand this hint for guidance.
-The Device Manager should still be open.
+  Expand this hint for guidance.
+    a. The Device Manager should still be open.
 
-If needed, select the arrow to expand DVD/CD-ROM drives.
+    b. If needed, select the arrow to expand DVD/CD-ROM drives.
 
-Right-click Microsoft Virtual DVD-ROM, then select Uninstall.
+    c. Right-click Microsoft Virtual DVD-ROM, then select Uninstall.
 
-On the Confirm Device Uninstall window, select OK to remove the device.
+    d. On the Confirm Device Uninstall window, select OK to remove the device.
 
-Notice that both the Microsoft Virtual DVD-ROM device and the DVD/CD-ROM drives device categories are no longer displayed in Device Manager
+    e. Notice that both the Microsoft Virtual DVD-ROM device and the DVD/CD-ROM drives device categories are no longer displayed in Device Manager
 
-Right-click over any device category, then select Scan for hardware changes from the pop-up menu.
+    f. Right-click over any device category, then select Scan for hardware changes from the pop-up menu.
 
-A window may appear, indicating a scan is taking place. If it does appear, once completed, any newly discovered hardware will have its drivers automatically installed.
+    g. A window may appear, indicating a scan is taking place. If it does appear, once completed, any newly discovered hardware will have its drivers automatically installed.
 
-Notice that the Microsoft Virtual DVD-ROM device and the DVD/CD-ROM drives device categories are present again in the Device Manager. Those devices were re-discovered and reinstalled automatically.
+    h. Notice that the Microsoft Virtual DVD-ROM device and the DVD/CD-ROM drives device categories are present again in the Device Manager. Those devices were re-discovered and reinstalled automatically.
 
-Close the Device Manager.
+    i. Close the Device Manager.
 
-Which device driver management function will prevent the use of a device even after rebooting or re-scanning for hardware changes?
+    - Most devices will be automatically installed by Windows when they are connected to the computer. However, knowing how to rescan for hardware, update drivers, disable/enable devices, and even uninstall devices can often be useful functions in repair and troubleshooting scenarios. If a device driver is present that is not associated (i.e., one maliciously planted) with an actual device, it will not auto-reinstall once it is uninstalled.
 
-Reinstall
-Disable
-Enabled
-Uninstall
-Most devices will be automatically installed by Windows when they are connected to the computer. However, knowing how to rescan for hardware, update drivers, disable/enable devices, and even uninstall devices can often be useful functions in repair and troubleshooting scenarios. If a device driver is present that is not associated (i.e., one maliciously planted) with an actual device, it will not auto-reinstall once it is uninstalled.
+#### Check your work
 
-Check your work
 Confirm that you scanned for new hardware through Device Manager.
+
 Confirm that you updated device drivers through Device Manager.
+
 Confirm that you disabled and enabled hardware through Device Manager.
+
 Confirm that you uninstalled and reinstalled devices through Device Manager.
 
 ### Removing unneeded applications and services
 
 System hardening involves removing anything that isn't necessary for a business activity. This may include native or default applications, services, and protocols as well as those installed by a system administrator. In this exercise, you will remove an application (i.e., CPUID) that is no longer being used. You will also remove the insecure FTP service.
 
-Connect to the MS10 VM. Send Ctrl+Alt+Delete and if necessary, sign in as jaime using Pa$$w0rd as the password.
+1. Connect to the MS10 VM. Send Ctrl+Alt+Delete and if necessary, sign in as jaime using Pa$$w0rd as the password.
 
-Jaime is a member of the Domain Admins group. So, this user account is an administrator on the MS10 system.
+    - Jaime is a member of the Domain Admins group. So, this user account is an administrator on the MS10 system.
 
-Minimize Server Manager if it appears.
+2. Minimize Server Manager if it appears.
 
-Use Programs and Features to uninstall the CPUID software.
+3. Use Programs and Features to uninstall the CPUID software.
 
-Expand this hint for guidance.
-Select Type here to search from the taskbar, enter programs, and then select Programs and Features from the results.
+  Expand this hint for guidance.
+    a. Select Type here to search from the taskbar, enter programs, and then select Programs and Features from the results.
 
-Select CPUID CPU-Z 2.06 from the list of programs.
+    b. Select CPUID CPU-Z 2.06 from the list of programs.
 
-Select Uninstall from the header menu. This option appears once you have selected a program.
+    c. Select Uninstall from the header menu. This option appears once you have selected a program.
 
-On the CPUID CPU-Z Uninstall window, select Yes.
+    d. On the CPUID CPU-Z Uninstall window, select Yes.
 
-A progress window will be displayed during the uninstall process.
+    e. A progress window will be displayed during the uninstall process.
 
-Once completed, on the CPUID CPU-Z Uninstall window, select OK.
+    f. Once completed, on the CPUID CPU-Z Uninstall window, select OK.
 
-Close the Programs and Features window.
+    g. Close the Programs and Features window.
 
-Use Remove Roles and Features to remove the FTP service.
+4. Use Remove Roles and Features to remove the FTP service.
 
-Expand this hint for guidance.
-Open or switch to Server Manager.
+  Expand this hint for guidance.
+    a. Open or switch to Server Manager.
 
-If Server Manager is not open, select Type here to search from the taskbar, enter server manager, and then select Server Manager from the results.
+    - If Server Manager is not open, select Type here to search from the taskbar, enter server manager, and then select Server Manager from the results.
 
-Select Manage from the top menu bar, then select Remove Roles and Features.
+    b. Select Manage from the top menu bar, then select Remove Roles and Features.
 
-The Turn Windows features on or off option in the Programs and Features utility on Windows Server opens the Add Roles and Features Wizard. The Add Roles and Features Wizard is only able to add features, not remove them.
+    - The Turn Windows features on or off option in the Programs and Features utility on Windows Server opens the Add Roles and Features Wizard. The Add Roles and Features Wizard is only able to add features, not remove them.
 
-On the Remove Roles and Features Wizard window Before you begin page, select Next.
+    c. On the Remove Roles and Features Wizard window Before you begin page, select Next.
 
-On the Select destination server page, leave the existing selection, select Next.
+    d. On the Select destination server page, leave the existing selection, select Next.
 
-On the Remove server roles page, select the arrow beside Web Server (IIS) to expand its contents.
+    e. On the Remove server roles page, select the arrow beside Web Server (IIS) to expand its contents.
 
-You may need to scroll down to see this open in the Roles list.
+    - You may need to scroll down to see this open in the Roles list.
 
-Select to clear the FTP Server checkbox, then select Next
+    f. Select to clear the FTP Server checkbox, then select Next
 
-On the Remove features page, leave the existing selections, select Next.
+    g. On the Remove features page, leave the existing selections, select Next.
 
-On the Confirm removal selections page, you should see "Web Server (IIS); FTP Server; FTP Service".
+    h. On the Confirm removal selections page, you should see "Web Server (IIS); FTP Server; FTP Service".
 
-Select to mark the Restart the destination server automatically if required checkbox, and then on the Remove Roles and Features Wizard pop-up window warning you about the automatic restart, and select Yes.
+    i. Select to mark the Restart the destination server automatically if required checkbox, and then on the Remove Roles and Features Wizard pop-up window warning you about the automatic restart, and select Yes.
 
-Select Remove.
+    j. Select Remove.
 
-The Removal progress page will show the status of the process.
+    k. The Removal progress page will show the status of the process.
 
-Once the removal is complete, the system will automatically reboot.
+    l. Once the removal is complete, the system will automatically reboot.
 
-You have now removed the insecure FTP service from the system.
+    - You have now removed the insecure FTP service from the system.
 
-If you need to install or re-install a Windows feature or service, which utility should be used?
+#### Check your work
 
-Add Roles and Features Wizard
-File Manager
-Server Manager
-Computer Management
-Check your work
 Confirm that you removed an unwanted application.
+
 Confirm that you removed an insecure service.
 
 ### Manipulate hosts file name resolution
 
 While dynamic DNS is a key to modern networks, there are situations where manipulating local hosts file-based name resolution is necessary. In some instances, system hardening will include forcing a specific resolution or blocking a resolution to prevent compromise or vulnerability exploitation. In this exercise, you will manipulate the hosts file to force the resolution of a FQDN to a specific IP address, to prevent the resolution of a specific FQDN, and to remove a false FQDN to IP mapping.
 
-Connect to the KALI and sign in as root using Pa$$w0rd as the password.
+1. Connect to the KALI and sign in as root using Pa$$w0rd as the password.
 
-Open a Terminal window and then maximize the Terminal window.
+2. Open a Terminal window and then maximize the Terminal window.
 
-Use wget to visit juiceshop.local.
+3. Use wget to visit juiceshop.local.
 
-Expand this hint for guidance.
-Run the following command to use wget:
+  Expand this hint for guidance.
+    a. Run the following command to use wget:
+      wget juiceshop.local
+    b. Notice the IPv4 address that the juiceshop.local domain name resolves into. For example, it could be 203.0.113.228.  
+    c. You should see a result that includes a final statement of index.html saved.
 
-wget juiceshop.local
-Notice the IPv4 address that the juiceshop.local domain name resolves into. For example, it could be 203.0.113.228.
+4. View the contents of the current /etc/hosts file.
 
-You should see a result that includes a final statement of index.html saved.
+  Expand this hint for guidance.
+    a. Run the following command:
+      cat /etc/hosts
+    - Notice that there is already an entry in the hosts file for juiceshop.local. This is present due to the configuration of the lab environment, but it is not an uncommon occurrence to define static FQDN to IP relationships in private networks.
 
-View the contents of the current /etc/hosts file.
+5. Introduce a name resolution error by editing the /etc/hosts file using nano to modify the entry to 203.0.113.249 juiceshop.local.
 
-Expand this hint for guidance.
-Run the following command:
+  Expand this hint for guidance.
+    a. Run the following command to open the hosts file in nano:
+      nano /etc/hosts
+    b. Use the arrow keys on your keyboard to move the cursor to the juiceshop.local line.
+    c. Edit the entry to read as follows:
+      203.0.113.249 juiceshop.local
+      - There only needs to be a single space between the IP address and the domain name or hostname. Several spaces or a tab can be used in order to align the names in a column. But alignment is not necessary for functionality.
 
-cat /etc/hosts
-Notice that there is already an entry in the hosts file for juiceshop.local. This is present due to the configuration of the lab environment, but it is not an uncommon occurrence to define static FQDN to IP relationships in private networks.
+    d. Type CTRL+X on your keyboard to exit Nano.
 
-Introduce a name resolution error by editing the /etc/hosts file using nano to modify the entry to 203.0.113.249 juiceshop.local.
+    e. Enter y to save the modified buffer.
 
-Expand this hint for guidance.
-Run the following command to open the hosts file in nano:
+    f. Press Enter on your keyboard to accept the existing filename.
 
-nano /etc/hosts
-Use the arrow keys on your keyboard to move the cursor to the juiceshop.local line.
+6. Use wget to visit juiceshop.local.
 
-Edit the entry to read as follows:
+  Expand this hint for guidance.
+    a. Run the following command to use wget:
+      wget juiceshop.local
+    b. Notice the IPv4 address that the juiceshop.local domain name resolves into. This time it will be 203.0.113.249.
+    c. The wget tool will wait for a connection that will never be established. If wget does not self-terminate after several seconds, press CTRL+C on your keyboard to terminate the command.
 
-203.0.113.249 juiceshop.local
-There only needs to be a single space between the IP address and the domain name or hostname. Several spaces or a tab can be used in order to align the names in a column. But alignment is not necessary for functionality.
+    - This result demonstrates that a false entry in a local hosts file will prevent access to a real site because the content of the hosts file always takes precedence over a DNS query. This is a means to block access to a FQDN. Simply define a false resolution. One common option is to map the FQDN to the localhost address (i.e., 127.0.0.1).
 
-Type CTRL+X on your keyboard to exit Nano.
+7. Alter the /etc/hosts file in nano to adjust the false entry for juiceshop.local to 203.0.113.228 juiceshop.local.
 
-Enter y to save the modified buffer.
+  Expand this hint for guidance.
+    a. Run the following command to open the hosts file in nano:
+      nano /etc/hosts
+    b. Use the arrow keys on your keyboard to move the cursor to the juiceshop.local line.
+    c. Edit the entry to read as follows:
+      - 203.0.113.228 juiceshop.local
+    d. Type CTRL+X on your keyboard to exit Nano.
+    e. Enter y to save the modified buffer.
+    f. Press Enter on your keyboard to accept the existing filename.
 
-Press Enter on your keyboard to accept the existing filename.
+8. Use wget to visit juiceshop.local.
 
-What is the proper syntax for entries in the /etc/hosts file?
+  Expand this hint for guidance.
+    a. Run the following command to use wget:
+      wget juiceshop.local
+    b. Notice the IPv4 address that the juiceshop.local domain name resolves into. This time it will be 203.0.113.228.
+    c. You should see a result that includes a final statement of index.html.1 saved.
 
-[FQDN][tab][IP address]
-[FQDN][tab][priority][tab][IP address]
-[IP address][tab][metric][tab][default gateway][tab][FQDN]
-[IP address][tab][FQDN]
-Use wget to visit juiceshop.local.
+    - The revision of the hosts file to include the line of 203.0.113.228 juiceshop.local enables the resolution of the domain name juiceshop.local to an IP address where there is an operational web server. The index.html page from this site was downloaded by wget. This demonstrates that a DNS entry, whether defined in a local hosts file or anywhere else in DNS, can have a resolution to a functional but still incorrect IP address. The .1 at the end of the index.html filename indicates that there already exists a file with that original name, so subsequent files saved by wget are assigned an incrementing number in order to prevent the overwriting of already retrieved content.
 
-Expand this hint for guidance.
-Run the following command to use wget:
+    - You could repeat this lab but instead of using wget you could open juiceshop.local in Firefox after each edit of /etc/hosts.
 
-wget juiceshop.local
-Notice the IPv4 address that the juiceshop.local domain name resolves into. This time it will be 203.0.113.249.
+9. Leave the Terminal window open.
 
-The wget tool will wait for a connection that will never be established. If wget does not self-terminate after several seconds, press CTRL+C on your keyboard to terminate the command.
+#### Check your work
 
-This result demonstrates that a false entry in a local hosts file will prevent access to a real site because the content of the hosts file always takes precedence over a DNS query. This is a means to block access to a FQDN. Simply define a false resolution. One common option is to map the FQDN to the localhost address (i.e., 127.0.0.1).
-
-Alter the /etc/hosts file in nano to adjust the false entry for juiceshop.local to 203.0.113.228 juiceshop.local.
-
-Expand this hint for guidance.
-Run the following command to open the hosts file in nano:
-
-nano /etc/hosts
-Use the arrow keys on your keyboard to move the cursor to the juiceshop.local line.
-
-Edit the entry to read as follows:
-
-203.0.113.228 juiceshop.local
-Type CTRL+X on your keyboard to exit Nano.
-
-Enter y to save the modified buffer.
-
-Press Enter on your keyboard to accept the existing filename.
-
-Use wget to visit juiceshop.local.
-
-Expand this hint for guidance.
-Run the following command to use wget:
-
-wget juiceshop.local
-Notice the IPv4 address that the juiceshop.local domain name resolves into. This time it will be 203.0.113.228.
-
-You should see a result that includes a final statement of index.html.1 saved.
-
-The revision of the hosts file to include the line of 203.0.113.228 juiceshop.local enables the resolution of the domain name juiceshop.local to an IP address where there is an operational web server. The index.html page from this site was downloaded by wget. This demonstrates that a DNS entry, whether defined in a local hosts file or anywhere else in DNS, can have a resolution to a functional but still incorrect IP address. The .1 at the end of the index.html filename indicates that there already exists a file with that original name, so subsequent files saved by wget are assigned an incrementing number in order to prevent the overwriting of already retrieved content.
-
-What features or capabilities can be obtained through editing the /etc/hosts file? (Select all that apply)
-
-Redirect queries to preferred DNS servers
-Redirect to a different functioning site
-Force resolution to a preferred IP address
-Set default gateway values
-Block resolution to the correct IP address
-You could repeat this lab but instead of using wget you could open juiceshop.local in Firefox after each edit of /etc/hosts.
-
-Leave the Terminal window open.
-
-Check your work
 Confirm that you inserted a false entry into a hosts file.
+
 Confirm that you inserted a false entry that resolves to a functional IP address into a hosts file.
+
 Confirm that you removed a false entry from a hosts file.
+
 Confirm that you evaluated the name resolution before and after each of these hosts file alterations.
