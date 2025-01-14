@@ -32,131 +32,98 @@ This activity is designed to test your understanding of and ability to apply con
 
 As a security team member, you may need to use existing security templates from a reputable source, such as sans.org, which can be tailored and scoped to your environment's specific needs and requirements. In this exercise, you will be evaluating security policy templates.
 
-The Security+ Skillable lab environment does not have direct internet access. Therefore, you must perform some tasks using your local browser.
+  - The Security+ Skillable lab environment does not have direct internet access. Therefore, you must perform some tasks using your local browser.
 
-On your local computer, open another tab in your current browser or open a new browser.
+1. On your local computer, open another tab in your current browser or open a new browser.
 
-Be sure to leave the current local browser tab open, which is focused on the virtual lab environment. This will allow you to return to these instructions and perform additional steps.
+    - Be sure to leave the current local browser tab open, which is focused on the virtual lab environment. This will allow you to return to these instructions and perform additional steps.
 
-In your local browser's address bar, enter https://www.sans.org/information-security-policy/.
+2. In your local browser's address bar, enter https://www.sans.org/information-security-policy/.
 
-You can highlight and cut-n-paste this URL from the instructions into the address bar of your local browser.
+    - You can highlight and cut-n-paste this URL from the instructions into the address bar of your local browser.
+    - You may see the typical pop-up notification regarding the acceptance of cookies. This notification is due to the General Data Protection Regulation (GDPR). Select Accept All Cookies.
+    - This site maintains security policy templates that can be used and customized by anyone. The security policy templates are grouped into various categories.
 
-You may see the typical pop-up notification regarding the acceptance of cookies. This notification is due to the General Data Protection Regulation (GDPR). Select Accept All Cookies.
+3. Locate the Filters: section, then under Categories, mark the Network Security check box.
 
-This site maintains security policy templates that can be used and customized by anyone. The security policy templates are grouped into various categories.
+  The list of security policy templates will be limited to those related to network security.
 
-Locate the Filters: section, then under Categories, mark the Network Security check box.
+4. Select Remote Access Policy to expand its section.
 
-The list of security policy templates will be limited to those related to network security.
+  Read the description of this security policy concept.
 
-Select Remote Access Policy to expand its section.
+5. Select PDF to download and view the PDF version of this policy.
 
-Read the description of this security policy concept.
+6. Review the major sections of this policy document. Notice the sections or headings used to organize the document.
 
-Select PDF to download and view the PDF version of this policy.
+7. Close the Remote Access Policy PDF and return to the SANS website.
 
-Review the major sections of this policy document. Notice the sections or headings used to organize the document.
+8. Under the Filters: section, under Categories, clear the Network Security check box.
 
-Which of the following are headings or section titles in the security policy document from the SANS organization? (Select all that apply)
+9. Under the Filters: section, under Categories, mark the Server Security check box.
 
-Scope
-Redactions
-Revision History
-Overview
-Purpose
-Policy Compliance
-Policy
-Close the Remote Access Policy PDF and return to the SANS website.
+  The list of security policy templates will be limited to those related to server security.
 
-Under the Filters: section, under Categories, clear the Network Security check box.
+10. Select Server Security Policy to expand its section.
 
-Under the Filters: section, under Categories, mark the Server Security check box.
+  Read the description of this security policy concept.
 
-The list of security policy templates will be limited to those related to server security.
+11. Select PDF to download and view the PDF version of this policy.
 
-Select Server Security Policy to expand its section.
+12. Review the major sections of this policy document.
 
-Read the description of this security policy concept.
+13. Close the Server Security Policy PDF and return to the SANS website.
 
-Select PDF to download and view the PDF version of this policy.
+14. Explore at least three other policies from the SANS website.
 
-Review the major sections of this policy document.
+15. Switch back to the browser tab focused on the Security+ Skillable virtual lab environment.
 
-The Server Security Policy references two other policies related to this policy document's concepts. What are those two other policies?
+#### Check your work
 
-Wireless Communication Policy
-Software Installation Policy
-DMZ Equipment Policy
-Password Protection Policy
-Audit Policy
-Close the Server Security Policy PDF and return to the SANS website.
-
-Explore at least three other policies from the SANS website.
-
-Switch back to the browser tab focused on the Security+ Skillable virtual lab environment.
-
-Check your work
 Confirm that you viewed several security policies from SANS.
 
 ### Access security benchmarks and configuration guides
 
 As a security team member, you may need to use existing security templates from a reputable source, such as CIS (Center for Internet Security). In this exercise, you will be evaluating security benchmarks and configuration guides.
 
-The Security+ Skillable lab environment does not have direct internet access. Therefore, you must perform some tasks using your local browser.
+    - The Security+ Skillable lab environment does not have direct internet access. Therefore, you must perform some tasks using your local browser.
 
-On your local computer, open another tab in your current browser or open a new browser.
+1. On your local computer, open another tab in your current browser or open a new browser.
 
-Be sure to leave the current local browser tab open, which is focused on the virtual lab environment. This will allow you to return to these instructions and perform additional steps.
+    - Be sure to leave the current local browser tab open, which is focused on the virtual lab environment. This will allow you to return to these instructions and perform additional steps.
 
-In your local browser's address bar, enter https://www.cisecurity.org/cis-benchmarks/.
+2. In your local browser's address bar, enter https://www.cisecurity.org/cis-benchmarks/.
 
-You can highlight and cut-n-paste this URL from the instructions into the address bar of your local browser.
+    - You can highlight and cut-n-paste this URL from the instructions into the address bar of your local browser.
+    - You may see the typical pop-up notification regarding the acceptance of cookies. This notification is due to the General Data Protection Regulation (GDPR). Select Accept.
+    - This site maintains security configuration guides and benchmarks that can be used and customized by anyone.
 
-You may see the typical pop-up notification regarding the acceptance of cookies. This notification is due to the General Data Protection Regulation (GDPR). Select Accept.
+3. Look at the CIS Benchmarks listed on this website, scroll down to locate the Microsoft Windows Server section,
 
-This site maintains security configuration guides and benchmarks that can be used and customized by anyone.
+    - The CIS (Center for Internet Security) Benchmarks (a.k.a. configuration guides) are grouped into categories: Cloud Providers, Desktop Software, DevSecOps Tools, Mobile Devices, Multi-Function Print Devices, Network Devices, Operating Systems, and Server Software.
 
-Look at the CIS Benchmarks listed on this website, scroll down to locate the Microsoft Windows Server section,
+4. Select Microsoft Windows Server to expand the related content.
 
-The CIS (Center for Internet Security) Benchmarks (a.k.a. configuration guides) are grouped into categories: Cloud Providers, Desktop Software, DevSecOps Tools, Mobile Devices, Multi-Function Print Devices, Network Devices, Operating Systems, and Server Software.
+  Read over the list of available versions of this benchmark.
 
-Select Microsoft Windows Server to expand the related content.
+5. At the bottom of the section for Microsoft Windows Server, there is the statement "To further explore this Benchmark, click here.". Select that click here link.
 
-Read over the list of available versions of this benchmark.
+6. A details page for the Microsoft Windows Server benchmarks is displayed.
 
-At the bottom of the section for Microsoft Windows Server, there is the statement "To further explore this Benchmark, click here.". Select that click here link.
+    - This CIS Benchmark is the product of a community consensus process and consists of secure configuration guidelines developed for Microsoft Windows Server.
 
-A details page for the Microsoft Windows Server benchmarks is displayed.
+7. Locate but do not select the download link.
 
-This CIS Benchmark is the product of a community consensus process and consists of secure configuration guidelines developed for Microsoft Windows Server.
+    - The benchmark download link opens a new page where the free PDF of the benchmark document can be obtained, but only after providing contact information. Do not fill out this form at this time – you are not required nor encouraged to distribute your private information as part of this exercise.
 
-The Microsoft Windows Server benchmarks are available for a wide range of versions of this OS. Which of the following are included on the list at CIS?
+    - If you wish to download CIS benchmarks, you will need to provide some contact details to CIS, including name, organization, sector, role, email, and country.
 
-Microsoft Windows Server 2003
-Microsoft Windows Server 2008
-Microsoft Windows Server 2016
-Microsoft Windows Server 2019
-Microsoft Windows Server 2022
-Locate but do not select the download link.
+8. Use the back button on your browser to return to the CIS Benchmarks page.
 
-The benchmark download link opens a new page where the free PDF of the benchmark document can be obtained, but only after providing contact information. Do not fill out this form at this time – you are not required nor encouraged to distribute your private information as part of this exercise.
+  Look over the list of 100+ benchmarks available from CIS.
 
-If you wish to download CIS benchmarks, you will need to provide some contact details to CIS, including name, organization, sector, role, email, and country.
+9. When you finished exploring the CIS benchmarks or the rest of their site and offerings, switch back to the browser tab focused on the Security+ Skillable virtual lab environment.
 
-Use the back button on your browser to return to the CIS Benchmarks page.
+#### Check your work
 
-Look over the list of 100+ benchmarks available from CIS.
-
-CIS Benchmarks are available for which of the following products?
-
-NGINX
-Docker
-pfSense Firewall
-Amazon Web Services
-Zoom
-Apple iOS
-When you finished exploring the CIS benchmarks or the rest of their site and offerings, switch back to the browser tab focused on the Security+ Skillable virtual lab environment.
-
-Check your work
 Confirm that you explored the categories and topics of CIS benchmarks (a.k.a. configuration guides).
