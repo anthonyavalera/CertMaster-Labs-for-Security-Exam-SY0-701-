@@ -36,122 +36,92 @@ The organization's SEIM solution has detected a significant increase in CPU cons
 
 Fortunately, a pre-crafted playbook will guide you through the manual response activities. An incident response (IR) consulting group wrote the organization's library of playbooks. The IR consulting group was given broad parameters for crafting the playbooks. This has resulted in playbooks with flexibility and support for a wide range of knowledge, skill, and experience levels for those needing to use them to respond to incidents. You will work through the playbook explicitly designed to deal with high CPU consumption by rogue processes.
 
-A playbook is a checklist of actions to perform to detect and respond to a specific type of incident.
+    - A playbook is a checklist of actions to perform to detect and respond to a specific type of incident.
 
 There are several primary steps or phases in this playbook:
 
-Investigate the high CPU usage and determine the rogue process's name.
-Terminate the offending process.
-Hash the file associated with the rogue process.
-Perform an online malware analysis using the hash value of the suspicious file.
-Determine the owner of the suspicious file.
-Archive the suspicious file into a zip container along with a file of its hash value.
-Copy the zip archive of the suspicious file to a quarantine system.
-Remove the suspicious file from the affected system(s).
-Fill out an incident report and submit it to the SOC for review.
+  1. Investigate the high CPU usage and determine the rogue process's name.
+  2. Terminate the offending process.
+  3. Hash the file associated with the rogue process.
+  4. Perform an online malware analysis using the hash value of the suspicious file.
+  5. Determine the owner of the suspicious file.
+  6. Archive the suspicious file into a zip container along with a file of its hash value.
+  7. Copy the zip archive of the suspicious file to a quarantine system.
+  8. Remove the suspicious file from the affected system(s).
+  9. Fill out an incident report and submit it to the SOC for review.
+
 For each of these steps, there are several options to select from. The playbook steps offer CLI (command line interface) solutions, GUI (graphical user interface) choices, or even third-party utility methods. While most of the operations use native tools, some reference use of tools from third-parties. All of the tools referenced in the playbooks have been pre-installed.
 
-The lab is designed so you can choose your own options for each step of the overall playbook procedure. You are welcome to repeat the entire lab and make other choices, or you can work through the various choices of each playbook step before moving forward. However, there may be a need to reset the system or implement a work around to use an alternate playbook step choice. These will be defined for you at the end of each playbook step before the Check your work section.
+- The lab is designed so you can choose your own options for each step of the overall playbook procedure. You are welcome to repeat the entire lab and make other choices, or you can work through the various choices of each playbook step before moving forward. However, there may be a need to reset the system or implement a work around to use an alternate playbook step choice. These will be defined for you at the end of each playbook step before the Check your work section.
 
-A playbook is a common example of responsive controls. These are controls that serve to direct corrective actions that need to be enacted after an incident has been confirmed. In a Security Operations Center (SOC), responsive controls might include several very well-defined actions to be taken by a security professional after identifying a specific issue.
+- A playbook is a common example of responsive controls. These are controls that serve to direct corrective actions that need to be enacted after an incident has been confirmed. In a Security Operations Center (SOC), responsive controls might include several very well-defined actions to be taken by a security professional after identifying a specific issue.
 
 In this introductory exercise, you will log into PC10 and initiate the rogue process.
 
-This is a necessary step to simulate the persistent execution of a rogue process.
+- This is a necessary step to simulate the persistent execution of a rogue process.
 
-Connect to the PC10 virtual machine. Send Ctrl+Alt+Delete and sign in as Jaime using Pa$$w0rd as the password.
+1. Connect to the PC10 virtual machine. Send Ctrl+Alt+Delete and sign in as Jaime using Pa$$w0rd as the password.
 
-Select Type here to search from the taskbar, type powershell, then select Windows PowerShell from the results.
+2. Select Type here to search from the taskbar, type powershell, then select Windows PowerShell from the results.
 
-Enter C:\LABFILES\Playbook-Lab.ps1.
+3. Enter C:\LABFILES\Playbook-Lab.ps1.
 
-There may be a brief presentation of an empty Windows PowerShell console while the process starts.
+  There may be a brief presentation of an empty Windows PowerShell console while the process starts.
 
-If prompted about allowing an execution exception for the script, type Y, then press Enter.
+4. If prompted about allowing an execution exception for the script, type Y, then press Enter.
 
-Close this Windows PowerShell console.
+5. Close this Windows PowerShell console.
 
-If you fail to close the Windows PowerShell console, the rogue process will be a sub-process of a PowerShell process.
+    - If you fail to close the Windows PowerShell console, the rogue process will be a sub-process of a PowerShell process.
 
 The rogue process, which is the focus of this lab, should now be running.
 
-The rogue process will immediately begin to consume most of the CPU. This will cause the system to be sluggish. You should be able to complete the initial playbook steps (where you will terminate the process) but be patient for the interface to respond to you.
+- The rogue process will immediately begin to consume most of the CPU. This will cause the system to be sluggish. You should be able to complete the initial playbook steps (where you will terminate the process) but be patient for the interface to respond to you.
 
-Check your work
+#### Check your work
+
 Confirm that you signed into PC10.
+
 Confirm that you initiated the rogue process.
 
 ### Investigate High CPU usage
 
-Playbook Step #1
+#### Playbook Step #1
+
 The first step of the High-CPU IR Playbook is:
 
+  1. Investigate the high CPU usage and determine the rogue process's name.
 
-Investigate the high CPU usage and determine the rogue process's name.
 In this High-CPU IR Playbook step, you will determine which rogue process is consuming most of the CPU's resources.
 
 Make a selection of the method to use to accomplish this initial task. The method options are:
 
-GUI - using the Windows Task Manager
-CLI - using the CLI Command Prompt wmic utility
-Third-party - using the Sysinternals GUI tool Process Manager
-The rogue process is configured to run for 15 minutes and then terminate automatically. If you do not see an "unknown" process consuming most of the CPU, then re-launch the rogue process. If needed, you can re-launch the rogue process by expanding the following hint:
-
-
-Expand this hint for guidance.
-Select Type here to search from the taskbar, type powershell, then select Windows PowerShell from the results.
-Enter C:\LABFILES\Playbook-Lab.ps1.
+    - GUI - using the Windows Task Manager
+    - CLI - using the CLI Command Prompt wmic utility
+    - Third-party - using the Sysinternals GUI tool Process Manager
+- The rogue process is configured to run for 15 minutes and then terminate automatically. If you do not see an "unknown" process consuming most of the CPU, then re-launch the rogue process. If needed, you can re-launch the rogue process by expanding the following hint:
+  Expand this hint for guidance.
+    1. Select Type here to search from the taskbar, type powershell, then select Windows PowerShell from the results.
+    2. Enter C:\LABFILES\Playbook-Lab.ps1.
 There may be a brief presentation of an empty Windows PowerShell console while the process starts.
-If prompted about allowing an execution exception for the script, type Y, then press Enter.
-Close this Windows PowerShell console.
+    3. If prompted about allowing an execution exception for the script, type Y, then press Enter.
+    4. Close this Windows PowerShell console.
 
-If you fail to close the Windows PowerShell console, the rogue process will be a sub-process of a PowerShell process.
+      If you fail to close the Windows PowerShell console, the rogue process will be a sub-process of a PowerShell process.
+  
 You can review the offered methods using the pull-down list below before making a final selection to work through.
 
+- Security Orchestration, Automation, and Response (SOAR) is a security solution whose purpose is to scan security and threat intelligence data collected from multiple sources within the enterprise and then analyze it using various techniques. A SOAR can also assist with provisioning tasks, such as creating and deleting user accounts, making shares available, or launching VMs from templates. The SOAR will use technologies such as cloud and SDN/SDV APIs, orchestration tools, and cyber threat intelligence (CTI) feeds to integrate the different systems it manages. It will also leverage technologies such as automated malware signature creation and user and entity behavior analytics (UEBA) to detect and identify threats. The automated actions performed by a SOAR are to be documented in runbooks. However, when the SOAR fails to operate properly, security personnel can use a playbook to perform manually the actions that the SOAR would have automated.
+- If you want to work through a different method for this playbook step, select another method and perform those steps.
 
-GUI
+  However, if the high CPU-consuming process is no longer active, you can re-launch the rogue process by expanding the following hint:
+    Expand this hint for guidance.
+      1. Select Type here to search from the taskbar, type powershell, then select Windows PowerShell from the results.
+      2. Enter C:\LABFILES\Playbook-Lab.ps1.
+      3. If prompted about allowing and execution exception for the script, type Y, then press Enter.
+      4. Close this Windows PowerShell console.
 
-Security Orchestration, Automation, and Response (SOAR) is a security solution whose purpose is to scan security and threat intelligence data collected from multiple sources within the enterprise and then analyze it using various techniques. A SOAR can also assist with provisioning tasks, such as creating and deleting user accounts, making shares available, or launching VMs from templates. The SOAR will use technologies such as cloud and SDN/SDV APIs, orchestration tools, and cyber threat intelligence (CTI) feeds to integrate the different systems it manages. It will also leverage technologies such as automated malware signature creation and user and entity behavior analytics (UEBA) to detect and identify threats. The automated actions performed by a SOAR are to be documented in runbooks. However, when the SOAR fails to operate properly, security personnel can use a playbook to perform manually the actions that the SOAR would have automated.
-
-...less
-Use GUI Task Manager
-Select Type here to search from the taskbar, type task, then select Task Manager from the results.
-
-The Task Manager window should be displayed in details view with a menu bar and several tabs.
-
-If the Task Manager is not in the details view, select More Details to switch to the details view.
-
-Select the CPU column to sort the processes by their CPU consumption.
-
-If the CPU percentages at the top of the column are 0%, then select the CPU column header again to reverse the sort order.
-
-If the most CPU-consuming process is Windows PowerShell, you failed to close the Windows PowerShell console you used to launch the rogue process. You must expand the Windows PowerShell process to view its children or sub-processes or close the Windows PowerShell console.
-
-Determine the name of the process that is consuming most of the CPU. Enter the name of this process as displayed in Task Manager into the field below:
-
-High CPU process name: 
-
-Type in the process name exactly as shown, including duplicating the capitalization.
-
-Press Enter on your keyboard after you type in the value or click out of the text box.
-
-Leave the Task Manager open. You may use it in a later playbook step.
-
-You have completed this playbook step using the GUI Task Manager.
-
-If you want to work through a different method for this playbook step, select another method and perform those steps.
-
-However, if the high CPU-consuming process is no longer active, you can re-launch the rogue process by expanding the following hint:
-
-
-Expand this hint for guidance.
-Select Type here to search from the taskbar, type powershell, then select Windows PowerShell from the results.
-Enter C:\LABFILES\Playbook-Lab.ps1.
-If prompted about allowing and execution exception for the script, type Y, then press Enter.
-Close this Windows PowerShell console.
-Check your work
-
-Select the Score button to validate this task:
+#### Check your work
 
 Confirm that you determined the process's name that consumes most of the CPU resource on PC10.
 
