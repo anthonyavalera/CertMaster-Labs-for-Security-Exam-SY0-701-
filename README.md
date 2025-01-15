@@ -26,6 +26,9 @@ This activity is designed to test your understanding of and ability to apply con
 - Network analysis tools (such as Wireshark) for capturing and examining network traffic.
 - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
+- Hyper-V
+- 
+
 ## Steps
 
 ### Perform gap analysis
