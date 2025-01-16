@@ -119,27 +119,20 @@ What is the name of the service found on several open ports? Enter the exact nam
 
 Press Enter on your keyboard after you type in the value or click out of the text box.
 
-Select the Score button to validate this task.
-
 - The service detected on ports 80, 443, and 8000 is the firewall. These ports can be used to access the firewall's management interface. It is not a secure deployment if a guest network member can access the management interface of the company firewall. These ports should be closed on the guest network. Keep in mind, that some ports should remain open to support valid communications, such as DNS (53), web (80/443), and email (25/465/587 (SMTP), 110/995 (POP3), 143/993 (IMAP)).
 
 8. Enter the following command to display just the OS detection results:
 
 - grep OS guest-scan.nmap
-What is the OS discovered on the target?
-
-Windows
-Unix
-MacOS
-FreeBSD
-Linux
 
 - Being able to determine the OS of a target may allow an adversary to select a more effective exploit based on OS type and version. When possible, minimizing OS information made accessible to external entities would reduce this threat.
 
 9. Leave the elevated Terminal window open for the next exercise.
 
-Check your work
+#### Check your work
+
 Confirm that you performed a network discovery and enumeration scan against a target.
+
 Confirm that you evaluated the threat vectors and attack surface revealed by the scan.
 
 ### Discover the attack surface of the internal network
@@ -171,24 +164,12 @@ Select the Score button to validate this task.
 
 - grep open server-scan.nmap
 
-What services are discovered to be accessible over open ports on this target?
-
-FTP
-MSRPC
-IMAP
-HTTP
-RDP
-Microsoft-DS
-NTP
-MySQL
-SMTP
-Mountd (i.e., NFS)
-
 - The number of open service ports on this server is significant. While many of these services may be present for a valid reason, that needs to be verified. Any necessary service should be configured to use encrypted communications, even internally. Also, notice that all of these service ports are discoverable as open (and service versions elicited) because there is no firewall seperating the Client and Server networks. This is evidence of a lack of effective network segmentation. It needs to be recognized that internal systems repesent a real threat vector. An insider can cause just as much harm as an external intruder.
 
 8. Enter the following command to display just the OS detection results:
 
 - grep OS server-scan.nmap
+  
 - The OS of this server is Windows Server 2016. This OS has reached its EOL (End of Life) which occured on Jan 11, 2022. This means it is no longer considered an actively developed and supported OS. However, it may continue to receive update for security issue only through Jan 12, 2027. At that date it will be an EOSL (End of Service Life) system. This system should be slated for replacement before it reaches the EOSL date.
 
 #### Check your work
