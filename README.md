@@ -52,9 +52,10 @@ Verify whether the share has been configured with appropriate permissions by try
 
 9. Select the Permissions tab, and then click Customize permissions.
 
-Check your work
+#### Check your work
 
 Confirm that you implemented a preventive control.
+
 Confirm that you tested a preventive control.
 
 ### Configure and test detective controls
@@ -181,9 +182,10 @@ A detective control records a log each time an event occurs, regardless of wheth
 
 You have successfully implemented a detective control to record object access activity.
 
-Check your work
+#### Check your work
 
 Confirm that you implemented a detective control.
+
 Confirm that you tested a detective control.
 
 ### Configure and test directive controls
@@ -220,9 +222,10 @@ A directive control provides instruction to direct a user towards more compliant
 
 You have successfully implemented a directive control to inform personnel of the limitations and restrictions of a controlled system.
 
-Check your work
+#### Check your work
 
 Confirm that you implemented a directive control.
+
 Confirm that you tested a directive control.
 
 ### Configure and test corrective controls
@@ -376,7 +379,8 @@ You have successfully implemented a simulation of a corrective control to repair
 
         - This corrective action is similar to that performed by the Signature Verification (SigVerif) tool of Windows. SigVerif executes before each booting of Windows to ensure that the necessary files for a secure booting operation are present and meet a specific hash value. If any of those files are corrupted, they are removed and replaced with a valid file. The corrective actions you took manually can be automated to perform similarly. For example, you could schedule a boot task to run the check.ps1 script each time the system reboots. Also, you should run the calchash.ps1 script every time a valid change to notes.txt is performed. However, if you elect to change the contents of notes.txt, the correction action would need to be updated accordingly.
 
-Check your work
+#### Check your work
 
 Confirm that you implemented a corrective control.
+
 Confirm that you tested a corrective control.
