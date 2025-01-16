@@ -17,11 +17,8 @@ This activity is designed to test your understanding of and ability to apply con
 - Development of critical thinking and problem-solving skills in cybersecurity.
 
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 
-- Security Information and Event Management (SIEM) system for log ingestion and analysis.
-- Network analysis tools (such as Wireshark) for capturing and examining network traffic.
-- Telemetry generation tools to create realistic network traffic and attack scenarios.
+- 
 
 ## Steps
 
@@ -126,9 +123,10 @@ Sec-Lab04 - SET Social-Engineering Attacks sub-menu.jpg
 
 30. Leave the Terminal window open for the next exercise.
 
-Check your work
+#### Check your work
 
 Confirm that you launched SET
+
 Confirm that you explored the options of SET
 
 ### Create a Spear Phishing Message
@@ -233,11 +231,14 @@ Press <return> to continue
 
 34. Leave the Terminal windows open.
 
-Check your work
+#### Check your work
 
 Confirm that you configured a mass mailer attack with SET.
+
 Confirm that you configured a reverse shell meterpreter payload.
+
 Confirm that you created a zip of the payload and hosted it on a web server.
+
 Confirm that you set a spoofed email with a malicious link to a victim using SET.
 
 ### Be an email phishing victim
@@ -280,9 +281,10 @@ Confirm that you set a spoofed email with a malicious link to a victim using SET
 
 16. Leave all windows open on MS10.
 
-Check your work
+#### Check your work
 
 Confirm that you acted like a victim and fell for a phishing attack.
+
 Confirm that you opened an email message, clicked on a link, downloaded a file, then executed the file.
 
 ### Exploit the victim through the established reverse shell
@@ -309,6 +311,6 @@ Confirm that you opened an email message, clicked on a link, downloaded a file, 
 
 At this point, you have successfully tricked a victim into running malicious code that directly led to an attacker having remote control access to the victim's system.
 
-Check your work
+#### Check your work
 
 Confirm that you established a remote control session via reverse shell to the victim.
