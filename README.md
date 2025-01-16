@@ -22,6 +22,10 @@ This activity is designed to test your understanding of and ability to apply con
 - Network analysis tools (such as Wireshark) for capturing and examining network traffic.
 - Telemetry generation tools to create realistic network traffic and attack scenarios.
 
+- Server Manager
+- Event Viewer
+- 
+
 ## Steps
 
 ### Configure and test preventive controls
