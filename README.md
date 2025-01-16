@@ -114,8 +114,10 @@ Gap analysis is the act of comparing the current configuration of a system with 
 
 Since you are using a security template from a third party, it is essential to understand that while the template's settings may be based on general security best practices and recommendations, they are not tuned specifically to your organization's risk profile or business goals. You will need to tailor and scope security configuration templates to your organization's specific needs and requirements.
 
-Check your work
+#### Check your work
 
 Confirm that you determined the version and build number of a Windows computer.
+
 Confirm that you used the Policy Analyzer from Microsoft to view a security baseline template.
+
 Confirm that you used the Policy Analyzer from Microsoft to perform a gap analysis by comparing a security baseline template to the effective state of a computer.
