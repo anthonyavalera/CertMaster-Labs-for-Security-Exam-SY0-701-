@@ -19,9 +19,8 @@ This activity is designed to test your understanding of and ability to apply con
 ### Tools Used
 [Bullet Points - Remove this afterwards]
 
-- Security Information and Event Management (SIEM) system for log ingestion and analysis.
-- Network analysis tools (such as Wireshark) for capturing and examining network traffic.
-- Telemetry generation tools to create realistic network traffic and attack scenarios.
+- Terminal
+- nmap
 
 ## Steps
 
@@ -67,15 +66,6 @@ You are intially working from an external subnet (an internet simulation) in rel
 4. Enter the following command to display just the open port results:
 
 - grep open border-scan.nmap
-What port(s) are discovered as being open on this target?
-
-53
-80
-21
-3389
-22
-443
-25
 
 - Open service ports represent a threat vector to an organization. Especially ports that are discoverable from the internet. Open ports for services like email (i.e., port 25/tcp for SMTP) and web (i.e., port 80/tcp HTTP) can be targeted for attacks. If those services have vulnerabilies, an adversary may be able to compromise the system and gain remote control. You also discovered that port 22/tcp for SSH is open. This supports remote control/management/administration. But, is that necessary and warranted by the organization from the internet? If not, it should be closed. Generally, anything internet exposed needs to be hardened against any potential attack potential.
 
@@ -83,20 +73,14 @@ What port(s) are discovered as being open on this target?
 
 - grep OS border-scan.nmap
 
-What OS was detected on the target?
-
-Linux
-Windows
-UNIX
-FreeBSD
-MacOS
-
 - Being able to determine the OS of a target may allow an adversary to select a more effective exploit based on OS type and version. When possible, minimizing OS information made accessible to external entities would reduce this threat.
 
 6. Leave the elevated Terminal window open for the next exercise.
 
-Check your work
+#### Check your work
+
 Confirm that you performed a network discovery and enumeration scan against a target.
+
 Confirm that you evaluated the threat vectors and attack surface revealed by the scan.
 
 ### Discover threat vectors from a guest network
