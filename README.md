@@ -24,7 +24,8 @@ This activity is designed to test your understanding of and ability to apply con
 
 - Server Manager
 - Event Viewer
-- 
+- Local Security Policy
+- Windows Systinternals
 
 ## Steps
 
