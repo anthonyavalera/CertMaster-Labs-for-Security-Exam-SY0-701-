@@ -17,7 +17,6 @@ This activity is designed to test your understanding of and ability to apply con
 - Development of critical thinking and problem-solving skills in cybersecurity.
 
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 
 - Remote Desktop Connection
 - Command Prompt
