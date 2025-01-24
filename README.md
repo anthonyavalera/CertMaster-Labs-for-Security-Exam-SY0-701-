@@ -22,6 +22,7 @@ This activity is designed to test your understanding of and ability to apply con
 - Remote Desktop Connection
 - Command Prompt
 - Terminal Emulator
+- PuTTY
 
 ## Steps
 
