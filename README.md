@@ -20,6 +20,7 @@ This activity is designed to test your understanding of and ability to apply con
 
 - Social Engineering Toolkit (SET)
 - Thunderbird
+- Terminal Emulator
 
 ## Steps
 
