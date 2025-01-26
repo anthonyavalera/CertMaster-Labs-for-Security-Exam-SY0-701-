@@ -19,6 +19,7 @@ This activity is designed to test your understanding of and ability to apply con
 ### Tools Used
 
 - Social Engineering Toolkit (SET)
+- Thunderbird
 
 ## Steps
 
