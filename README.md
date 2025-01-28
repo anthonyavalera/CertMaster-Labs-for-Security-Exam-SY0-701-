@@ -20,6 +20,9 @@ This activity is designed to test your understanding of and ability to apply con
 [Bullet Points - Remove this afterwards]
 
 - Hyper-V Manager
+- Windows PowerShell
+- Server Manager
+  
 ## Steps
 
 ### Install Hyper-V
