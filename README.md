@@ -23,7 +23,9 @@ This activity is designed to test your understanding of and ability to apply con
 [Bullet Points - Remove this afterwards]
 
 - Event Viewer
-- Terminal Emulator (nslookup)
+- Terminal Emulator
+- nslookup
+- dig
 
 ## Steps
 
