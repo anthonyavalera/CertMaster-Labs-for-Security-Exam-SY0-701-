@@ -21,6 +21,7 @@ This activity is designed to test your understanding of and ability to apply con
 
 - Server Manager
 - Command Prompt
+- Group Policy Management
 
 ## Steps
 
