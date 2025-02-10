@@ -21,6 +21,7 @@ This activity is designed to test your understanding of and ability to apply con
 - Command Prompt
 - Windows Server Backup
 - Disk Management
+- Volume Shadow Copy Service (VSS)
 
 ## Steps
 
