@@ -21,6 +21,7 @@ This activity is designed to test your understanding of and ability to apply con
 [Bullet Points - Remove this afterwards]
 
 - Device Manager
+- Server Manager
 - Terminal Emulator
 
 ## Steps
