@@ -10,17 +10,7 @@ This activity is designed to test your understanding of and ability to apply con
 5.1 Summarize elements of effective security governance.
 5.6 Given a scenario, implement security awareness practices.
 
-### Skills Learned
-[Bullet Points - Remove this afterwards]
-
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
-- Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
-
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 
 - Terminal Emulator
 - Windows PowerShell
