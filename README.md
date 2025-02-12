@@ -7,15 +7,6 @@ This activity is designed to test your understanding of and ability to apply con
 2.2 Explain common threat vectors and attack surfaces.
 5.6 Given a scenario, implement security awareness practices.
 
-### Skills Learned
-[Bullet Points - Remove this afterwards]
-
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
-- Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
-
 ### Tools Used
 
 - Social Engineering Toolkit (SET)
