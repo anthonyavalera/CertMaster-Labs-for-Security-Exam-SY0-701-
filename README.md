@@ -9,9 +9,6 @@ This activity is designed to test your understanding of and ability to apply con
 - 4.1 Given a scenario, apply common security techniques to computing resources.
 - 4.4 Explain security alerting and monitoring concepts and tools.
 - 5.1 Summarize elements of effective security governance.
-   
-### Skills Learned
-[Bullet Points - Remove this afterwards]
 
 ### Tools Used
 
