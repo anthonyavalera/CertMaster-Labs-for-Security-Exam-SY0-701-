@@ -7,17 +7,7 @@ This activity is designed to test your understanding of and ability to apply con
 3.1 Compare and contrast security implications of virtual networking.
 3.2 Create and configure a virtual machine.
 
-### Skills Learned
-[Bullet Points - Remove this afterwards]
-
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
-- Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
-
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 
 - Hyper-V Manager
 - Windows PowerShell
