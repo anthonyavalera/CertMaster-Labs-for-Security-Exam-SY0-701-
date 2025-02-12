@@ -34,6 +34,11 @@ Monitor the network for any further suspicious activity.
 [Bullet Points - Remove this afterwards]
 
 - Security Onion
+- Windows PowerShell
+- Task Manager
+- Wireshark
+- Event Viewer
+- Computer Management
 
 ## Steps
 
