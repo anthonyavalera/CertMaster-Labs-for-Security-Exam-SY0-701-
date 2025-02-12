@@ -21,17 +21,7 @@ Monitor the network for any further suspicious activity.
 4.4 Explain security alerting and monitoring concepts and tools.
 3.2 Given a scenario, apply security principles to secure enterprise infrastructure.
 
-### Skills Learned
-[Bullet Points - Remove this afterwards]
-
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
-- Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
-
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 
 - Security Onion
 - Windows PowerShell
